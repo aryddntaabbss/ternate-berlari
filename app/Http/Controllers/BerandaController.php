@@ -18,6 +18,6 @@ class BerandaController extends Controller
         $description = 'Selamat Datang Laman Resmi Ternate Berlari';
 
         // Return ke view 'beranda'
-        return view('pages.index', compact('title', 'description'));
+        return view('frontend.pages.index', compact('title', 'description'));
     }
 }
