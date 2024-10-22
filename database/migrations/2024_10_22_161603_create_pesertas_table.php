@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('kategori_usia');
             $table->enum('size_jersey', ['S', 'M', 'L', 'XL', 'XXL']);
             $table->string('bukti_bayar');
+            $table->enum('status', ['terverifikasi', 'tidak terverifikasi'])->default('tidak terverifikasi');
             $table->timestamps();
         });
     }

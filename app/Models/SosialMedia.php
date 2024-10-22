@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class SosialMedia extends Model
 {
-    protected $table = 'kategori';
+    protected $table = 'sosial_media';
     protected $guarded = ['id'];
 }

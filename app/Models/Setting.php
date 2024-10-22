@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class Setting extends Model
 {
-    protected $table = 'kategori';
+    protected $table = 'settings';
     protected $guarded = ['id'];
 }
