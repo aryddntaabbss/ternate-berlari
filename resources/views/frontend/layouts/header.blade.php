@@ -14,7 +14,7 @@
                     </li>
                     <li>
                         <a href="#"
-                            class="block py-2 pr-4 pl-3 border-b border-gray-600 hover:bg-gray-600 lg:border-0 hover:text-white lg:p-0 ">Company</a>
+                            class="block p-2 pr-4 pl-3 border-gray-600 hover:bg-gray-400 lg:border-0 hover:bg-opacity-50 hover:text-white lg:p-0 ">Company</a>
                     </li>
                     <li>
                         <a href="#"
