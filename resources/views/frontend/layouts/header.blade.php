@@ -1,10 +1,10 @@
 <!-- Responsive Header -->
 <header class="top-0 left-0 w-full bg-white shadow-md z-50">
-    <nav class="border-gray-200 px-4 lg:px-6 py-2.5">
+    <nav class="border-gray-200 px-4 lg:px-6 py-1">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <!-- Logo -->
             <a href="{{ route('index') }}" class=" flex items-center">
-                <img src="{{ asset('assets/img/Logo.png') }}" class="mr-3 h-10 sm:h-14" alt="Logo" />
+                <img src="{{ asset('assets/img/Logo.png') }}" class="mr-3 h-10 sm:h-10" alt="Logo" />
             </a>
 
             <!-- Hamburger Button -->

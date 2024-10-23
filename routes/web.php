@@ -20,6 +20,10 @@ Route::get('/', [BerandaController::class, 'index'])->name('index');
 Route::get('/data-peserta', [BerandaController::class, 'peserta'])->name('peserta');
 Route::get('/daftar', [BerandaController::class, 'daftar'])->name('daftar');
 
+Route::get('/blank', function () {
+    return view('frontend.pages.blank');
+})->name('blank');
+
 // Route yang membutuhkan autentikasi
 Route::middleware(['auth'])->group(function () {
     // Profile routes

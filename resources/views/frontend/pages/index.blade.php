@@ -4,12 +4,11 @@
 @include('frontend.layouts.hero')
 
 <!-- Pricing Section -->
-<section id="pendaftaran" class="mx-auto pb-12 px-4 max-w-7xl">
-    <h2 class="text-4xl font-bold text-gray-800 text-center py-16" data-aos="fade-up" data-aos-duration="1500">
-        PENDAFTARAN</h2>
+<section id="pendaftaran" class="mx-auto pb-12 px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-yellow-400 text-center py-16" data-aos="fade-up">PENDAFTARAN</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Paket Single -->
-        <div class="border rounded-lg p-6 text-center shadow-xl" data-aos="fade-right" data-aos-duration="1500">
+        <div class="border rounded-lg my-3 p-6 text-center shadow-xl" data-aos="fade-right">
             <h3 class="text-5xl font-bold text-gray-600 mb-2">5<span class="text-base">KM</span></h3>
             <div class="text-2xl font-bold text-yellow-400 mb-2">Rp175.000</div>
             <a href="{{ route('daftar') }}"
@@ -23,12 +22,12 @@
         </div>
 
         <!-- Paket Premium -->
-        <div class="border-2 rounded-lg p-6 text-center shadow-xl border-yellow-400 relative" data-aos="zoom-out"
-            data-aos-duration="1500">
-            <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-2 rounded-bl-lg">
+        <div class="border-2 rounded-lg p-6 text-center shadow-xl border-yellow-400 relative" data-aos="zoom-out">
+            <div
+                class="absolute top-0 xl:left-24 left-28 bg-yellow-400 text-white py-1 px-2 rounded-bl-md rounded-br-md">
                 <p class="text-sm font-bold">PALING LARIS!</p>
             </div>
-            <h3 class="text-5xl font-bold text-gray-600 mb-2">10<span class="text-base">KM</span></h3>
+            <h3 class="text-5xl mt-3 font-bold text-gray-600 mb-2">10<span class="text-base">KM</span></h3>
             <div class="text-2xl font-bold text-yellow-400 mb-2">Rp200.000</div>
             <a href="{{ route('daftar') }}"
                 class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">Pilih
@@ -41,7 +40,7 @@
         </div>
 
         <!-- Paket Business -->
-        <div class="border rounded-lg p-6 text-center shadow-xl" data-aos="fade-left" data-aos-duration="1500">
+        <div class="border rounded-lg my-3 p-6 text-center shadow-xl" data-aos="fade-left">
             <h3 class="text-5xl font-bold text-gray-600 mb-2">21<span class="text-base">KM</span></h3>
             <div class="text-2xl font-bold text-yellow-400 mb-2">Rp350.000</div>
             <a href="{{ route('daftar') }}"
@@ -60,13 +59,13 @@
 <!-- Image and Text Section -->
 <section id="about" class="mx-auto px-4 py-12 flex flex-col md:flex-row gap-9 justify-center items-center">
     <!-- Image  -->
-    <div class="lg:flex lg:col-span-5 justify-end items-center">
+    <div class="lg:flex lg:col-span-5 justify-end items-center" data-aos="fade-right">
         <img src="{{ asset('assets/img/hero.png') }}" alt="Running Girl" class="h-3/6 max-h-[300px] object-contain">
     </div>
 
     <!-- Text -->
-    <div class="w-full md:w-1/2 md:pl-8" data-aos="fade-right" data-aos-duration="1500">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">Engaging Title Goes Here</h2>
+    <div class="w-full md:w-1/2 md:pl-8" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-yellow-400 mb-4">Engaging Title Goes Here</h2>
         <p class="text-gray-600 mb-4">
             This is an example of a paragraph placed to the right of the image. It can be used to provide
             additional information or context related to the image shown. The layout adjusts automatically
@@ -80,23 +79,21 @@
 </section>
 
 <!-- Kategori Section -->
-<section id="kategori" class="mx-auto px-4 text-center py-12">
-    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-aos="fade-down" data-aos-duration="900">KATEGORI PELARI</h2>
+<section id="kategori" class=" mx-auto px-4 text-center py-8">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-4" data-aos="fade-up">KATEGORI PELARI</h2>
     <!-- Menggunakan flexbox dan grid untuk meratakan card ke tengah secara responsif -->
-    <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-10 md:px-8 justify-items-center
-               bg-none sm:bg-[url('/assets/img/road.png')]" data-aos="fade-up" data-aos-duration="900">
+    <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-8 md:px-8 justify-items-center
+            bg-none sm:bg-[url('/assets/img/road.png')]" data-aos="zoom-out">
         <!-- Feature Card -->
-        @foreach ([
-        ['title' => 'Pelajar Pria/Wanita', 'age' => '15 - 17 Tahun'],
+        @foreach ([['title' => 'Pelajar Pria/Wanita', 'age' => '15 - 17 Tahun'],
         ['title' => 'Elit(Atlet) Pria/Wanita', 'age' => '17 - 34 Tahun'],
         ['title' => 'Hobbies Pria/Wanita', 'age' => '18 - 34 Tahun'],
         ['title' => 'Master A Pria/Wanita', 'age' => '35 - 44 Tahun'],
         ['title' => 'Master B Pria/Wanita', 'age' => '45 - 50 Tahun'],
-        ['title' => 'Master C Pria/Wanita', 'age' => '50 Tahun +']
-        ] as $category)
-        <div
-            class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-64">
-            <h3 class="text-xl font-semibold text-white">{{ $category['title'] }}</h3>
+        ['title' => 'Master C Pria/Wanita', 'age' => '50 Tahun +']] as $category)
+        <div class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-48"
+            data-aos="fade-up">
+            <h3 class="text-md font-semibold text-white">{{ $category['title'] }}</h3>
             <p class="mt-2 text-gray-300">{{ $category['age'] }}</p>
         </div>
         @endforeach
@@ -106,16 +103,15 @@
 <!-- Shirt Size -->
 <section id="jersey" class="mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Header -->
-    <h2 class="col-span-1 md:col-span-2 text-4xl font-bold text-gray-800 mb-6 text-center" data-aos="fade-down"
-        data-aos-duration="900">UKURAN JERSEY</h2>
+    <h2 class="col-span-1 md:col-span-2 text-3xl font-bold text-yellow-400 mb-6 text-center" data-aos="fade-up">UKURAN
+        JERSEY</h2>
 
     <!-- Column 1: Pria -->
-    <div data-aos="fade-right" data-aos-duration="900">
+    <div data-aos="fade-right">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Ukuran Jersey Pria</h2>
         <div class="flex justify-center items-center mb-6">
             <img src="{{ asset('assets/img/man.png') }}" alt="Men's Shirt" class="w-full max-w-xs rounded-lg">
         </div>
-
         <div>
             <table class="w-full border-collapse border border-gray-300 text-center">
                 <thead>
@@ -157,12 +153,11 @@
     </div>
 
     <!-- Column 2: Wanita -->
-    <div data-aos="fade-left" data-aos-duration="900">
+    <div data-aos="fade-left">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Ukuran Jersey Wanita</h2>
         <div class="flex justify-center items-center mb-6">
             <img src="{{ asset('assets/img/woman.png') }}" alt="Women's Shirt" class="w-full max-w-xs rounded-lg">
         </div>
-
         <div>
             <table class="w-full border-collapse border border-gray-300 text-center">
                 <thead>
@@ -205,29 +200,6 @@
 </section>
 
 <!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" aria-label="Scroll to top"
-    class="fixed bottom-16 right-4 z-50 hidden p-3 bg-yellow-500 shadow-xl text-white rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-    </svg>
-</button>
-
-<!-- JavaScript for Scroll to Top Button -->
-<script>
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.remove('hidden');
-        } else {
-            scrollToTopBtn.classList.add('hidden');
-        }
-    });
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-</script>
+@include('frontend.components.to-top')
 
 @endsection

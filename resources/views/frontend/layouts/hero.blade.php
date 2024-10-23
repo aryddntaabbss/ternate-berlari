@@ -1,77 +1,82 @@
 <!-- Hero Section -->
-<section class="h-screen flex items-center bg-gradient-to-t from-gray-100 to-yellow-400 justify-center">
-    <div class="grid max-w-screen-xl mx-auto lg:gap-8 xl:gap-32 lg:py-16 lg:grid-cols-12">
+<section
+    class="min-h-screen flex items-center bg-gradient-to-t from-gray-100 to-yellow-400 justify-center px-24 md:px-8 lg:px-16">
+    <div class="grid mx-auto gap-6 md:gap-8 lg:py-16 lg:grid-cols-12">
         <!-- Teks Hero -->
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1
-                class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
-                Selamat datang di Website Ternate Berlari
-            </h1>
-            <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">
-                From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their
-                payment stack.
-            </p>
+        <div class="place-self-center col-span-2 lg:col-span-7 lg:text-left">
+            <div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-white mb-4">
+                    Selamat datang di Website Ternate Berlari
+                </h1>
+                <p class="text-lg md:text-xl lg:text-2xl font-light text-white mb-6 lg:mb-8">
+                    From checkout to global sales tax compliance, companies around the world use Flowbite to simplify
+                    their
+                    payment stack.
+                </p>
+            </div>
 
             <!-- Waktu Hitung Mundur -->
             <div class="mb-6">
-                <div id="countdown" class="text-3xl flex gap-5 justify-center font-semibold text-yellow-400">
-                    <div class="block w-20 bg-white p-3 rounded text-center shadow-lg">
+                <div id="countdown"
+                    class="text-xl md:text-2xl flex justify-center lg:justify-center gap-2 font-semibold text-yellow-400">
+                    <div class="block w-16 md:w-20 bg-white p-2 rounded text-center shadow-lg">
                         <span id="days">00</span>
-                        <div class="text-sm text-gray-600 mt-2 font-bold">Hari</div>
+                        <div class="text-xs md:text-sm text-yellow-400 mt-2 font-bold">Hari</div>
                     </div>
-                    <div class="block w-20 bg-white p-3 rounded text-center shadow-lg">
+                    <div class="block w-16 md:w-20 bg-white p-2 rounded text-center shadow-lg">
                         <span id="hours">00</span>
-                        <div class="text-sm text-gray-600 mt-2 font-bold">Jam</div>
+                        <div class="text-xs md:text-sm text-yellow-400 mt-2 font-bold">Jam</div>
                     </div>
-                    <div class="block w-20 bg-white p-3 rounded text-center shadow-lg">
+                    <div class="block w-16 md:w-20 bg-white p-2 rounded text-center shadow-lg">
                         <span id="minutes">00</span>
-                        <div class="text-sm text-gray-600 mt-2 font-bold">Menit</div>
+                        <div class="text-xs md:text-sm text-yellow-400 mt-2 font-bold">Menit</div>
                     </div>
-                    <div class="block w-20 bg-white p-3 rounded text-center shadow-lg">
+                    <div class="block w-16 md:w-20 bg-white p-2 rounded text-center shadow-lg">
                         <span id="seconds">00</span>
-                        <div class="text-sm text-gray-600 mt-2 font-bold">Detik</div>
+                        <div class="text-xs md:text-sm text-yellow-400 mt-2 font-bold">Detik</div>
                     </div>
                 </div>
-                <div class="justify-self-center"><a href="#pendaftaran"
-                        class="block text-3xl w-96 justify-center text-center font-bold py-3 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-400 shadow-xl mb-4">Daftar
-                        Sekarang</a>
+                <div class="mt-6 lg:mt-9 justify-self-center">
+                    <a href="#pendaftaran"
+                        class="block w-full lg:w-52 px-3 py-2 text-center text-xl font-bold bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 shadow-xl">
+                        Daftar Sekarang
+                    </a>
                 </div>
-
             </div>
         </div>
 
         <!-- Gambar Hero -->
-        <div class="hidden lg:flex lg:col-span-5 justify-end items-center">
+        <div class="hidden lg:flex lg:col-span-5 justify-center lg:justify-end items-center">
             <img src="{{ asset('assets/img/orang-lari.png') }}" alt="Running Girl"
-                class="h-8/6 max-h-[500px] object-contain">
+                class="w-80 max-w-xl md:max-w-md lg:max-w-lg h-auto object-contain">
         </div>
     </div>
 </section>
 
 <!-- Script Hitung Mundur -->
 <script>
-    // Set waktu tujuan acara (contoh: 31 Desember 2024 pukul 00:00:00)
-    const eventDate = new Date("December 31, 2024 00:00:00").getTime();
+    // Mendefinisikan waktu target acara
+    var eventDate = new Date("December 31, 2024 00:00:00").getTime();
 
-    // Update countdown setiap detik
-    const countdownTimer = setInterval(function() {
-        // Waktu saat ini
-        const now = new Date().getTime();
+    // Fungsi untuk update hitungan mundur setiap detik
+    var countdownTimer = setInterval(function() {
+        // Mendapatkan waktu saat ini
+        var now = new Date().getTime();
 
-        // Jarak antara sekarang dan waktu acara
-        const distance = eventDate - now;
+        // Jarak antara waktu sekarang dan event
+        var distance = eventDate - now;
 
-        // Perhitungan hari, jam, menit, dan detik
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Kalkulasi hari, jam, menit, detik
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Tampilkan hasil dalam elemen dengan id="countdown"
-        document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-        document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-        document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-        document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        // Menampilkan hasil dalam elemen dengan id="countdown"
+        document.getElementById("days").textContent = days < 10 ? "0" + days : days;
+        document.getElementById("hours").textContent = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").textContent = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").textContent = seconds < 10 ? "0" + seconds : seconds;
 
         // Jika hitungan mundur selesai
         if (distance < 0) {
