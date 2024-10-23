@@ -3,8 +3,8 @@
 
      <div class="d-flex align-items-center justify-content-between">
          <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-             <img src="{{ asset('assets/img/Logo.png') }}" alt="">
-             <span class="d-none d-lg-block">Ternate Berlari</span>
+             <img src="{{ asset('storage/' . $websiteLogo) }}" alt="">
+             <span class="d-none d-lg-block">{{ $websiteTitle }}</span>
          </a>
          <i class="bi bi-list toggle-sidebar-btn"></i>
      </div><!-- End Logo -->
@@ -21,7 +21,7 @@
 
                  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                      data-bs-toggle="dropdown">
-                     <img src="{{ asset('front/img/logo-unkhair.png') }}" alt="Profile" class="rounded-circle">
+                     <img src="{{ asset('backend/img/profile-logo.png') }}" alt="Profile" class="rounded-circle">
                      <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                  </a><!-- End Profile Iamge Icon -->
 

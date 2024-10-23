@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ @$title != '' ? "$title - " : '' }} Ternate Berlari</title>
+    <title>{{ @$title != '' ? "$title - " : '' }} {{ $websiteTitle }}</title>
+
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -32,6 +33,14 @@
     <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
 
     @notifyCss
+
+    <link rel="stylesheet" href="{{ asset('backend/trix/trix.css') }}">
+    <script type="text/javascript" src="{{ asset('backend/trix/trix.js') }}"></script>
+    <style>
+        trix-toolbar [data-trix-button-group='file-tools'] {
+            display: none;
+        }
+    </style>
     <style>
         .notify {
             position: fixed;
@@ -152,7 +161,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('backend/js/main.js') }}"></script>
-
+    @yield('head')
     <x-notify::notify />
     @notifyJs
 
@@ -161,7 +170,7 @@
         function confirmDelete(id) {
             Swal.fire({
                 title: 'Apakah Anda yakin?',
-                text: "Judul ini akan dihapus secara permanen!",
+                text: "Data ini akan dihapus secara permanen!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

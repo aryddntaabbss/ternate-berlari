@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('deskripsi_website', function (Blueprint $table) {
             $table->id();
+            $table->string('logo');
             $table->string('url');
             $table->string('title');
             $table->string('keyword');

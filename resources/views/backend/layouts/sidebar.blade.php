@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="">
+            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="{{ route('dashboard') }}">
                 <i class="bi bi-people"></i>
                 <span>Dashboard</span>
             </a>
@@ -16,14 +16,14 @@
             </a>
         </li><!-- End Profile Page Nav -->
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="">
+            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="{{ route('menu') }}">
                 <i class="bi bi-people"></i>
                 <span>Menu</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="">
+            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="{{ route('pages') }}">
                 <i class="bi bi-people"></i>
                 <span>Pages</span>
             </a>
@@ -59,7 +59,7 @@
             </a>
         </li><!-- End Profile Page Nav -->
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="">
+            <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="{{ route('settings') }}">
                 <i class="bi bi-people"></i>
                 <span>Pengaturan</span>
             </a>

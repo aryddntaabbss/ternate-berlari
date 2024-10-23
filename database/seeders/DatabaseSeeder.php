@@ -6,8 +6,10 @@ use App\Models\Peserta;
 use App\Models\RoadRace;
 use App\Models\Setting;
 use App\Models\User;
+use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -79,6 +81,16 @@ class DatabaseSeeder extends Seeder
             'kategori_usia' => 'Dewasa',
             'size_jersey' => 'M',
             'bukti_bayar' => 'assets/img/Logo.png',
+        ]);
+
+        DB::table('deskripsi_website')->insert([
+            'url' => 'http://localhost/',
+            'logo' => 'Ternate Berlari',
+            'title' => 'Ternate Berlari',
+            'keyword' => 'website,laravel,local',
+            'deskripsi' => 'This is the description for my website.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
     }
 }

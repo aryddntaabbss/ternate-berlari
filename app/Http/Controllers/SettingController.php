@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    //
+    function index() {
+        return view('backend.settings');
+    }
 }
