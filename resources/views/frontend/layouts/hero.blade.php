@@ -50,7 +50,6 @@
 
 <!-- Script Hitung Mundur -->
 <script>
-    // Set waktu tujuan acara (contoh: 31 Desember 2024 pukul 00:00:00)
     const eventDate = new Date("December 31, 2024 00:00:00").getTime();
 
     // Update countdown setiap detik

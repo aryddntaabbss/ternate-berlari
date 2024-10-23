@@ -7,13 +7,13 @@
 @endsection
 
 <!-- Pricing Section -->
-<section id="pendaftaran" class="mx-auto pb-12 pt-36 px-4 max-w-7xl" data-aos="fade-up" data-aos-offset="300"
-    data-aos-easing="ease-in-sine">
-    <h2 class="text-4xl font-bold text-gray-800 text-center py-16">Pendaftaran</h2>
+<section id="pendaftaran" class="mx-auto pb-12 pt-36 px-4 max-w-7xl">
+    <h2 class="text-4xl font-bold text-gray-800 text-center py-16" data-aos="fade-up" data-aos-duration="15000">
+        Pendaftaran</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Paket Single -->
-        <div class="border rounded-lg p-6 text-center shadow-xl">
+        <div class="border rounded-lg p-6 text-center shadow-xl" data-aos="fade-right" data-aos-duration="15000">
             <h3 class="text-5xl font-bold text-gray-600 mb-2">5<span class="text-base">KM</span></h3>
             <div class="text-2xl font-bold text-yellow-400 mb-2">Rp175.000</div>
             <a href="#" class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-400 mb-4">Pilih
@@ -26,7 +26,8 @@
         </div>
 
         <!-- Paket Premium -->
-        <div class="border-2 rounded-lg p-6 text-center shadow-xl border-yellow-400 relative">
+        <div class="border-2 rounded-lg p-6 text-center shadow-xl border-yellow-400 relative" data-aos="zoom-out"
+            data-aos-duration="15000">
             <div class="absolute  bg-yellow-400 text-white py-1">
                 {{-- <p class="text-sm font-bold">PALING LARIS!</p> --}}
             </div>
@@ -42,7 +43,7 @@
         </div>
 
         <!-- Paket Business -->
-        <div class="border rounded-lg p-6 text-center shadow-xl">
+        <div class="border rounded-lg p-6 text-center shadow-xl" data-aos="fade-left" data-aos-duration="15000">
             <h3 class="text-5xl font-bold text-gray-600 mb-2">21<span class="text-base">KM</span></h3>
             <div class="text-2xl font-bold text-yellow-400 mb-2">Rp350.000</div>
             <a href="#" class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-400 mb-4">Pilih
@@ -58,15 +59,14 @@
 </section>
 
 <!-- Image and Text Section -->
-<section id="about" class="mx-auto px-4 md:pt-36 py-12 flex flex-col md:flex-row gap-9 justify-center items-center"
-    data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+<section id="about" class="mx-auto px-4 md:pt-36 py-12 flex flex-col md:flex-row gap-9 justify-center items-center">
     <!-- Image  -->
-    <div class="lg:flex lg:col-span-5 justify-end items-center">
+    <div class="lg:flex lg:col-span-5 justify-end items-center" data-aos="fade-left" data-aos-duration="15000">
         <img src="{{ asset('assets/img/hero.png') }}" alt="Running Girl" class="h-3/6 max-h-[300px] object-contain">
     </div>
 
     <!-- Text -->
-    <div class="w-full md:w-1/2 md:pl-8">
+    <div class="w-full md:w-1/2 md:pl-8" data-aos="fade-right" data-aos-duration="15000">
         <h2 class="text-4xl font-bold text-gray-800 mb-4">Engaging Title Goes Here</h2>
         <p class="text-gray-600 mb-4">
             This is an example of a paragraph placed to the right of the image. It can be used to provide

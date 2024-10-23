@@ -1,5 +1,5 @@
 <!-- Responsive Header -->
-<header class="bg-gray-50 shadow-md w-full">
+<header class="bg-gray-50 shadow-md fixed top-0 left-0 w-full z-50">
     <nav class="border-gray-200 px-4 lg:px-6 py-2.5">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <!-- Logo -->
