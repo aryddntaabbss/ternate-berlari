@@ -24,7 +24,7 @@ class DeskripsiWebsiteController extends Controller
     {
         // Validasi data
         $request->validate([
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Menambahkan validasi untuk gambar
+            'logo' => 'nullable|image|mimes:png|max:2048', // Menambahkan validasi untuk gambar
             'url' => 'required|url',
             'title' => 'required|string|max:255',
             'keyword' => 'required|string|max:255',
