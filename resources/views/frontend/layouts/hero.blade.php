@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="h-screen flex items-center bg-gradient-to-t from-gray-100 to-yellow-400 justify-center ">
+<section class="h-screen flex items-center bg-gradient-to-t from-gray-100 to-yellow-400 justify-center">
     <div class="grid max-w-screen-xl mx-auto lg:gap-8 xl:gap-32 lg:py-16 lg:grid-cols-12">
         <!-- Teks Hero -->
         <div class="mr-auto place-self-center lg:col-span-7">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="justify-self-center"><a href="#pendaftaran"
-                        class="block text-3xl w-96 justify-center text-center font-bold py-5 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-400 shadow-xl mb-4">Daftar
+                        class="block text-3xl w-96 justify-center text-center font-bold py-3 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-400 shadow-xl mb-4">Daftar
                         Sekarang</a>
                 </div>
 
@@ -50,6 +50,7 @@
 
 <!-- Script Hitung Mundur -->
 <script>
+    // Set waktu tujuan acara (contoh: 31 Desember 2024 pukul 00:00:00)
     const eventDate = new Date("December 31, 2024 00:00:00").getTime();
 
     // Update countdown setiap detik
