@@ -11,7 +11,7 @@
 
         <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-6 space-y-6 md:space-y-0">
             <!-- Card Paket -->
-            <div class="w-96 bg-white border rounded-lg p-6 text-center shadow-xl" data-aos="fade-up"
+            <div class="w-auto bg-white border rounded-lg p-6 text-center shadow-xl" data-aos="fade-up"
                 data-aos-duration="1500">
                 <div
                     class="grid grid-cols-2 md:grid-cols-2 gap-4 bg-gray-200 p-2 border-1 rounded-md text-sm text-gray-400 mb-2 text-left">
