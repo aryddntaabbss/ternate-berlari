@@ -6,7 +6,7 @@
         <div class="place-self-center col-span-2 lg:col-span-7 lg:text-left">
             <div>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-white mb-4">
-                    Selamat datang di Website Ternate Berlari
+                    Selamat datang di Website {{ $websiteTitle }}
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl font-light text-white mb-6 lg:mb-8">
                     From checkout to global sales tax compliance, companies around the world use Flowbite to simplify
@@ -53,10 +53,11 @@
     </div>
 </section>
 
+
 <!-- Script Hitung Mundur -->
 <script>
-    // Mendefinisikan waktu target acara
-    var eventDate = new Date("December 31, 2024 00:00:00").getTime();
+    // Mendefinisikan waktu target acara dari Blade
+    var eventDate = new Date("{{ $settings['tanggal_event'] }}").getTime();
 
     // Fungsi untuk update hitungan mundur setiap detik
     var countdownTimer = setInterval(function() {

@@ -4,7 +4,7 @@
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <!-- Logo -->
             <a href="{{ route('index') }}" class=" flex items-center">
-                <img src="{{ asset('assets/img/Logo.png') }}" class="mr-3 h-10 sm:h-10" alt="Logo" />
+                <img src="{{ asset('storage/' . $websiteLogo) }}" class="mr-3 h-10 sm:h-10" alt="Logo" />
             </a>
 
             <!-- Hamburger Button -->

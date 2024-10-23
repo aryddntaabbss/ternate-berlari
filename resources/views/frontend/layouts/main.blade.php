@@ -5,11 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ @$title != '' ? "$title - " : '' }}{{ config('app.name') }}</title>
+        <title>{{ @$title != '' ? "$title - " : '' }} {{ $websiteTitle }}</title>
 
-        <meta content="Website Ternate Berlari" name="description">
-        <meta content="Ternate Berlari" name="keywords">
-        <meta name="author" content="Ternate Berlari">
+        {{-- --}}
+        <meta content="{!! $websiteDeskripsi !!}" name="description">
+        <meta content="{{ $websiteKeyword }}" name="keywords">
+
+        <!-- Favicons -->
+        <link href="{{ asset('storage/' . $websiteLogo) }}" rel="icon">
+        <link href="{{ asset('storage/' . $websiteLogo) }}" rel="apple-touch-icon">
+        <meta name="author" content="TongIt">
 
         <!-- Google Fonts -->
         <link href="https://fonts.gstatic.com" rel="preconnect">
