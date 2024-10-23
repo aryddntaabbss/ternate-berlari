@@ -7,7 +7,8 @@
 @endsection
 
 <!-- Pricing Section -->
-<section id="pendaftaran" class="mx-auto py-12 px-4 max-w-7xl">
+<section id="pendaftaran" class="mx-auto pb-12 pt-36 px-4 max-w-7xl" data-aos="fade-up" data-aos-offset="300"
+    data-aos-easing="ease-in-sine">
     <h2 class="text-4xl font-bold text-gray-800 text-center py-16">Pendaftaran</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -57,11 +58,11 @@
 </section>
 
 <!-- Image and Text Section -->
-<section class="mx-auto px-4 py-12 flex flex-col md:flex-row gap-9 justify-center items-center">
+<section id="about" class="mx-auto px-4 md:pt-36 py-12 flex flex-col md:flex-row gap-9 justify-center items-center"
+    data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
     <!-- Image  -->
     <div class="lg:flex lg:col-span-5 justify-end items-center">
-        <img src="{{ asset('assets/img/running-girl.png') }}" alt="Running Girl"
-            class="h-3/6 max-h-[300px] object-contain">
+        <img src="{{ asset('assets/img/hero.png') }}" alt="Running Girl" class="h-3/6 max-h-[300px] object-contain">
     </div>
 
     <!-- Text -->
@@ -80,7 +81,8 @@
 </section>
 
 <!-- Kategori Section -->
-<section class="mx-auto px-4 justify-center items-center text-center py-12">
+<section id="kategori" class="mx-auto px-4 md:pt-36 justify-center items-center text-center py-12" data-aos="fade-down"
+    data-aos-offset="300" data-aos-easing="ease-in-sine">
     <h2 class="text-4xl font-bold text-gray-800 mb-4">Kategori Berlari</h2>
     <!-- Menggunakan flexbox dan grid untuk meratakan card ke tengah secara responsif -->
     <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-10 md:px-20 justify-items-center
@@ -130,7 +132,8 @@
 </section>
 
 <!-- Shirt Size -->
-<section class="mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+<section id="jersey" class="mx-auto px-4 py-12 md:pt-36 grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-right"
+    data-aos-offset="300" data-aos-easing="ease-in-sine">
     <!-- Header -->
     <h2 class="col-span-1 md:col-span-2 text-4xl font-bold text-gray-800 mb-6 text-center">Ukuran Baju</h2>
 
@@ -235,7 +238,7 @@
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTopBtn"
-    class="fixed bottom-28 right-4 z-50 hidden p-3 bg-yellow-500 shadow-xl text-white rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600">
+    class="fixed bottom-16 right-4 z-50 hidden p-3 bg-yellow-500 shadow-xl text-white rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
     </svg>

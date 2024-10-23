@@ -1,6 +1,6 @@
 <!-- Hero Section -->
-<section class="h-screen flex items-center bg-gradient-to-t from-gray-100 to-yellow-400 justify-center">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-32 lg:py-16 lg:grid-cols-12">
+<section class="h-screen flex items-center bg-gradient-to-t from-gray-100 to-yellow-400 justify-center ">
+    <div class="grid max-w-screen-xl mx-auto lg:gap-8 xl:gap-32 lg:py-16 lg:grid-cols-12">
         <!-- Teks Hero -->
         <div class="mr-auto place-self-center lg:col-span-7">
             <h1
@@ -42,8 +42,8 @@
 
         <!-- Gambar Hero -->
         <div class="hidden lg:flex lg:col-span-5 justify-end items-center">
-            <img src="{{ asset('assets/img/running-girl.png') }}" alt="Running Girl"
-                class="h-5/6 max-h-[500px] object-contain">
+            <img src="{{ asset('assets/img/orang-lari.png') }}" alt="Running Girl"
+                class="h-8/6 max-h-[500px] object-contain">
         </div>
     </div>
 </section>
