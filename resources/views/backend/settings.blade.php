@@ -73,31 +73,35 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Social Media</h5>
-                        <form action="" method="POST">
+                        <form action="{{ route('social-media.update') }}" method="POST">
                             @csrf
-                            <!-- Social Media Links -->
                             <div class="mb-3">
                                 <label for="facebook" class="form-label">Facebook</label>
-                                <input type="text" class="form-control" id="facebook" name="facebook" value="RivoArman">
+                                <input type="text" class="form-control" id="facebook" name="facebook"
+                                    value="{{ $socialMedia['Facebook'] ?? '' }}">
                             </div>
 
                             <div class="mb-3">
                                 <label for="twitter" class="form-label">Twitter</label>
-                                <input type="text" class="form-control" id="twitter" name="twitter" value="RivoArman">
+                                <input type="text" class="form-control" id="twitter" name="twitter"
+                                    value="{{ $socialMedia['Twitter'] ?? '' }}">
                             </div>
 
                             <div class="mb-3">
                                 <label for="instagram" class="form-label">Instagram</label>
-                                <input type="text" class="form-control" id="instagram" name="instagram" value="xx">
+                                <input type="text" class="form-control" id="instagram" name="instagram"
+                                    value="{{ $socialMedia['Instagram'] ?? '' }}">
                             </div>
 
                             <div class="mb-3">
                                 <label for="youtube" class="form-label">YouTube</label>
-                                <input type="text" class="form-control" id="youtube" name="youtube" value="xx">
+                                <input type="text" class="form-control" id="youtube" name="youtube"
+                                    value="{{ $socialMedia['YouTube'] ?? '' }}">
                             </div>
 
                             <button type="submit" class="btn btn-outline-primary">Update</button>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -108,11 +112,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Footer Text</h5>
-                        <form action="" method="POST">
+                        <form action="{{ route('update-footer') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="footer_text" name="footer_text"
-                                    value="© All right reserved.">
+                                    value="{{ $settings['footer'] ?? '' }}">
                             </div>
                             <button type="submit" class="btn btn-outline-primary">Update</button>
                         </form>
@@ -124,10 +128,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Event Date</h5>
-                        <form action="" method="POST">
+                        <form action="{{ route('update-event-date') }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <input type="date" class="form-control" id="event_date" name="event_date">
+                                <input type="date" class="form-control" id="event_date" name="event_date"
+                                    value="{{ $settings['tanggal_event'] ?? '' }}">
                             </div>
                             <button type="submit" class="btn btn-outline-primary">Update</button>
                         </form>
@@ -141,22 +146,53 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Rekening Bank</h5>
-                        <form action="" method="POST">
+                        <form action="{{ route('banks.update') }}" method="POST">
                             @csrf
-                            <!-- Bank Details -->
                             <div class="mb-3">
-                                <label for="bank_name" class="form-label">Nama Bank</label>
-                                <input type="text" class="form-control" id="bank_name" name="bank_name">
+                                <label for="nama_bank" class="form-label">Nama Bank</label>
+                                <input type="text" class="form-control" id="nama_bank" name="nama_bank"
+                                    value="{{ $bank->nama_bank }}">
                             </div>
 
                             <div class="mb-3">
-                                <label for="bank_account" class="form-label">No. Rekening</label>
-                                <input type="text" class="form-control" id="bank_account" name="bank_account">
+                                <label for="no_rekening" class="form-label">No. Rekening</label>
+                                <input type="text" class="form-control" id="no_rekening" name="no_rekening"
+                                    value="{{ $bank->no_rekening }}">
                             </div>
 
                             <div class="mb-3">
-                                <label for="account_name" class="form-label">Nama Rekening</label>
-                                <input type="text" class="form-control" id="account_name" name="account_name">
+                                <label for="nama_rekening" class="form-label">Nama Rekening</label>
+                                <input type="text" class="form-control" id="nama_rekening" name="nama_rekening"
+                                    value="{{ $bank->nama_rekening }}">
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-primary">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tentang</h5>
+                        <form action="{{ route('banks.update') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="nama_bank" class="form-label">Nama Bank</label>
+                                <input type="text" class="form-control" id="nama_bank" name="nama_bank"
+                                    value="{{ $bank->nama_bank }}">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="no_rekening" class="form-label">No. Rekening</label>
+                                <input type="text" class="form-control" id="no_rekening" name="no_rekening"
+                                    value="{{ $bank->no_rekening }}">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nama_rekening" class="form-label">Nama Rekening</label>
+                                <input type="text" class="form-control" id="nama_rekening" name="nama_rekening"
+                                    value="{{ $bank->nama_rekening }}">
                             </div>
 
                             <button type="submit" class="btn btn-outline-primary">Update</button>
@@ -165,5 +201,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 @endsection

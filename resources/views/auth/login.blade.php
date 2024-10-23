@@ -5,13 +5,15 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Ternate Berlari - LOGIN</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>{{ @$title != '' ? "$title - " : '' }} {{ $websiteTitle }}</title>
+
+    {{--  --}}
+    <meta content="{!! $websiteDeskripsi !!}" name="description">
+    <meta content="{{ $websiteKeyword }}" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/Logo.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/Logo.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('storage/' . $websiteLogo) }}" rel="icon">
+    <link href="{{ asset('storage/' . $websiteLogo) }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -47,7 +49,7 @@
 
                             <div class="d-flex justify-content-center py-4">
                                 <a href="/" class="logo d-flex align-items-center w-auto">
-                                    <img src="{{ asset('assets/img/Logo.png') }}" alt="">
+                                    <img src="{{ asset('storage/' . $websiteLogo) }}" alt="">
                                     {{-- <span class="d-none d-lg-block">Login</span> --}}
                                 </a>
                             </div><!-- End Logo -->
@@ -122,8 +124,7 @@
                             </div>
 
                             <div class="credits">
-                                &copy; Copyright <strong><span>Ternate Berlari</span></strong> {{ date('Y') }}. All
-                                Rights Reserved
+                                {{ $settings['footer'] ?? '' }}
                             </div>
 
                         </div>

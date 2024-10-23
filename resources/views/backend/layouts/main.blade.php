@@ -7,12 +7,13 @@
 
     <title>{{ @$title != '' ? "$title - " : '' }} {{ $websiteTitle }}</title>
 
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    {{--  --}}
+    <meta content="{!! $websiteDeskripsi !!}" name="description">
+    <meta content="{{ $websiteKeyword }}" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('front/img/logo-unkhair.png') }}" rel="icon">
-    <link href="{{ asset('front/img/logo-unkhair.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('storage/' . $websiteLogo) }}" rel="icon">
+    <link href="{{ asset('storage/' . $websiteLogo) }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">

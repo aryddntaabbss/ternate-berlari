@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\DeskripsiWebsite;
 use App\Models\Setting;
+use App\Models\SosialMedia;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -43,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
         // Pass setting data to all views
     View::composer('*', function ($view) {
         // Ambil data dari tabel settings
-        $settings = Setting::whereIn('name', ['logo', 'footer', 'tanggal_event'])->get();
+        $settings = Setting::whereIn('name', ['footer', 'tanggal_event'])->get();
 
         // Buat array untuk menampung data
         $settingData = [];
@@ -58,6 +59,20 @@ class AppServiceProvider extends ServiceProvider
 
         // penggunaan = <p>Event Date: {{ $settings['tanggal_event'] ?? 'Default Date' }}</p>
 
+    });
+
+    // Komposer view agar data sosial media tersedia di semua view
+    View::composer('*', function ($view) {
+        $socialMedias = SosialMedia::all();
+        $socialMediaData = [];
+
+        foreach ($socialMedias as $media) {
+            $socialMediaData[$media->nama_sosmed] = $media->url;
+        }
+
+        $view->with('socialMedia', $socialMediaData);
+
+        // Penggunaan contoh: <p>Facebook: {{ $socialMedias['Facebook'] ?? 'Not Set' }}</p>
     });
 
     }

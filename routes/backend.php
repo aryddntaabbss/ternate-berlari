@@ -5,7 +5,9 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RekeningController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SosialMediaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,5 +43,9 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // settings
     Route::get('/settings', [SettingController::class, 'index'])->name('settings');
     Route::put('/deskripsi-website/{id}/update', [DeskripsiWebsiteController::class, 'update'])->name('deskripsi_website.update');
+    Route::post('/social-media/update', [SosialMediaController::class, 'update'])->name('social-media.update');
+    Route::post('/update-footer', [SettingController::class, 'updateFooter'])->name('update-footer');
+    Route::post('/update-event-date', [SettingController::class, 'updateEventDate'])->name('update-event-date');
+    Route::post('/banks/update', [RekeningController::class, 'update'])->name('banks.update');
 });
 

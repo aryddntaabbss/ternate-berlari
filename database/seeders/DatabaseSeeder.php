@@ -28,17 +28,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Setting::create([
-            'name' => 'logo',
-            'value' => 'assets/img/Logo.png',
-        ]);
-
-        Setting::create([
             'name' => 'footer',
-            'value' => 'Ternate Berlari 2024',
+            'value' => '© Copyright Ternate Berlari 2024. All Rights Reserved.',
         ]);
         Setting::create([
             'name' => 'tanggal_event',
-            'value' => '15/15/2024',
+            'value' => '2024-10-25',
         ]);
         RoadRace::create([
             'nama' => '5',
@@ -91,6 +86,21 @@ class DatabaseSeeder extends Seeder
             'deskripsi' => 'This is the description for my website.',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('sosial_media')->insert([
+            ['nama_sosmed' => 'Facebook', 'url' => 'https://facebook.com/', 'created_at' => now(), 'updated_at' => now()],
+            ['nama_sosmed' => 'Twitter', 'url' => 'https://twitter.com/', 'created_at' => now(), 'updated_at' => now()],
+            ['nama_sosmed' => 'Instagram', 'url' => 'https://instagram.com/', 'created_at' => now(), 'updated_at' => now()],
+            ['nama_sosmed' => 'YouTube', 'url' => 'https://youtube.com/', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+
+        DB::table('rekening')->insert([
+            'nama_bank' => 'Bank Central Asia (BCA)',
+            'no_rekening' => '1234567890',
+            'nama_rekening' => 'John Doe',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }
