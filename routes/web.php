@@ -4,13 +4,32 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [BerandaController::class, 'index'])->name('index');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group.
+|
+*/
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Route untuk halaman beranda
+Route::get('/', [BerandaController::class, 'index'])->name('index');
+Route::get('/data-peserta', [BerandaController::class, 'peserta'])->name('peserta');
+Route::get('/daftar', [BerandaController::class, 'daftar'])->name('daftar');
+
+// Route yang membutuhkan autentikasi
+Route::middleware(['auth'])->group(function () {
+    // Profile routes
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 });
 
+// Include route tambahan
 require __DIR__ . '/auth.php';
 require __DIR__ . '/backend.php';

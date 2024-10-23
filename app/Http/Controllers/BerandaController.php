@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 
 class BerandaController extends Controller
@@ -13,11 +14,32 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        // Anda bisa mengirim data ke view jika diperlukan.
-        $title = 'Selamat Datang di Beranda!';
-        $description = 'Selamat Datang Laman Resmi Ternate Berlari';
+        $data = [
+            'title' => 'Selamat Datang di Beranda!',
+            'description' => 'Selamat Datang di Laman Resmi Ternate Berlari',
+        ];
 
-        // Return ke view 'beranda'
-        return view('frontend.pages.index', compact('title', 'description'));
+        return view('frontend.pages.index', $data);
+    }
+
+    /**
+     * Menampilkan halaman data peserta di frontend.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function peserta()
+    {
+        // Ambil data peserta dari database
+        $data_peserta = Peserta::all();
+
+        // Return ke view 'frontend.pages.data-peserta' dengan data peserta
+        return view('frontend.pages.data-peserta', compact('data_peserta'));
+    }
+
+    public function daftar()
+    {
+
+        // Return ke view 'frontend.pages.daftar' dengan daftar
+        return view('frontend.pages.daftar');
     }
 }
