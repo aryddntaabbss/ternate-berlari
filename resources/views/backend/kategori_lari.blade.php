@@ -62,9 +62,9 @@
                                         <label for="genderKategori" class="form-label">Gender</label>
                                         <select name="gender" class="form-select" id="genderKategori" required>
                                             <option value="" disabled selected>Pilih Gender</option>
-                                            <option value="Laki-laki">Laki-laki</option>
-                                            <option value="Perempuan">Perempuan</option>
-                                            <option value="Perempuan/Laki-Laki">Perempuan/Laki-Laki</option>
+                                            <option value="Pria">Pria</option>
+                                            <option value="Wanita">Wanita</option>
+                                            <option value="Pria/Wanita">Pria/Wanita</option>
                                         </select>
                                     </div>
 
@@ -118,9 +118,9 @@
                                     <div class="mb-3">
                                         <label for="editGender" class="form-label">Gender</label>
                                         <select name="gender" class="form-select" id="editGender" required>
-                                            <option value="Laki-laki">Laki-laki</option>
-                                            <option value="Perempuan">Perempuan</option>
-                                            <option value="Perempuan/Laki-Laki">Perempuan/Laki-Laki</option>
+                                            <option value="Pria">Pria</option>
+                                            <option value="Wanita">Wanita</option>
+                                            <option value="Pria/Wanita">Pria/Wanita</option>
                                         </select>
                                     </div>
 

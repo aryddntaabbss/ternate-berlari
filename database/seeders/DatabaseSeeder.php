@@ -110,6 +110,11 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        RoadRace::create([
+            'name' => '10',
+            'biaya' => 180000,
+            'paling_laris' => true,
+        ]);
         Kategori::create([
             'name' => 'Pelajar',
             'umur' => '30 - 20',
