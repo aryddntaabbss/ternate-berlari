@@ -5,7 +5,7 @@
 <!-- Section untuk Data Peserta -->
 <section class="mt-4 px-5">
     <div class="w-full max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800 text-center pb-5" data-aos="fade-up" data-aos-duration="1500">
+        <h2 class="text-2xl font-bold text-gray-800 text-center pb-5" data-aos="fade-up" data-aos-duration="1500">
             FORM PENDAFTARAN
         </h2>
 
@@ -23,7 +23,7 @@
                     </div>
 
                     <!-- Kolom Kedua -->
-                    <div class="space-y-2 font-semibold">
+                    <div class="space-y-2 w-40 md:w-auto font-semibold">
                         <p class="text-gray-600">: {{ $bank->nama_bank }}</p>
                         <p class="text-gray-600">: {{ $bank->no_rekening }}</p>
                         <p class="text-gray-600">: {{ $bank->nama_rekening }}</p>

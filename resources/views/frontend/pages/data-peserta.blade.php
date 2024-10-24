@@ -5,7 +5,7 @@
 <!-- Section untuk Data Peserta -->
 <section class="section mt-5">
     <div class="w-full mx-auto px-4">
-        <h2 class="text-4xl font-bold text-gray-800 text-center pb-5" data-aos="fade-up" data-aos-duration="15000">
+        <h2 class="text-2xl font-bold text-gray-800 text-center pb-5" data-aos="fade-up" data-aos-duration="15000">
             DAFTAR PESERTA</h2>
         <div class="bg-white shadow-md rounded-lg" data-aos="fade-up" data-aos-duration="15000">
             <div class="p-6">
