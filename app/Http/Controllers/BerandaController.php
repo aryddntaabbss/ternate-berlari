@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peserta;
+use App\Models\Rekening;
 use Illuminate\Http\Request;
 
 class BerandaController extends Controller
@@ -24,7 +25,6 @@ class BerandaController extends Controller
 
     /**
      * Menampilkan halaman data peserta di frontend.
-     *
      * @return \Illuminate\View\View
      */
     public function peserta()
@@ -38,8 +38,9 @@ class BerandaController extends Controller
 
     public function daftar()
     {
+        $bank = Rekening::first();
 
         // Return ke view 'frontend.pages.daftar' dengan daftar
-        return view('frontend.pages.daftar');
+        return view('frontend.pages.daftar', compact('bank'));
     }
 }

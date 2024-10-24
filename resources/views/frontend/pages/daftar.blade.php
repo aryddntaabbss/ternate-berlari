@@ -9,24 +9,24 @@
             FORM PENDAFTARAN
         </h2>
 
-        <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-6 space-y-6 md:space-y-0">
+        <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-6">
             <!-- Card Paket -->
-            <div class="w-auto bg-white border rounded-lg p-6 text-center shadow-xl" data-aos="fade-up"
+            <div class="w-full lg:w-3/6 bg-white border rounded-lg xl:p-6 p-3 text-center shadow-xl" data-aos="fade-up"
                 data-aos-duration="1500">
                 <div
-                    class="grid grid-cols-2 md:grid-cols-2 gap-4 bg-gray-200 p-2 border-1 rounded-md text-sm text-gray-400 mb-2 text-left">
+                    class="grid lg:w-full grid-cols-2 gap-2 bg-gray-200 p-3 border rounded-md text-sm text-gray-400 mb-2 text-left">
                     <!-- Kolom Pertama -->
-                    <div class="space-y-2 w-36 lg:w-40 font-bold">
+                    <div class="space-y-2 font-bold">
                         <p class="text-sm font-medium text-gray-700">Nama Bank</p>
                         <p class="text-sm font-medium text-gray-700">No Rekening</p>
-                        <p class="text-sm font-medium text-gray-700">Nama Rekening</span></p>
+                        <p class="text-sm font-medium text-gray-700">Nama Rekening</p>
                     </div>
 
                     <!-- Kolom Kedua -->
-                    <div class="space-y-2 w-auto lg:w-40 font-semibold">
-                        <p class="text-gray-600">: Bank BRI</p>
-                        <p class="text-gray-600">: 12345678910</p>
-                        <p class="text-gray-600">: Aryaddinata</p>
+                    <div class="space-y-2 font-semibold">
+                        <p class="text-gray-600">: {{ $bank->nama_bank }}</p>
+                        <p class="text-gray-600">: {{ $bank->no_rekening }}</p>
+                        <p class="text-gray-600">: {{ $bank->nama_rekening }}</p>
                     </div>
                 </div>
                 <h3 class="text-5xl font-bold text-gray-600 mb-2">21<span class="text-base">KM</span></h3>
@@ -97,8 +97,7 @@
                     <!-- Bukti Bayar -->
                     <div class="col-span-1">
                         <label for="bukti_bayar" class="block text-sm font-medium pb-1 text-gray-700">Bukti Bayar
-                            (Upload
-                            Gambar)</label>
+                            (Upload Gambar)</label>
                         <input type="file" name="bukti_bayar" id="bukti_bayar" accept="image/*" required
                             class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:border-indigo-500 focus:ring-indigo-500">
                     </div>
