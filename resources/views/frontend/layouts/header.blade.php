@@ -47,6 +47,25 @@
                             class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data
                             Peserta</a>
                     </li>
+                    <!-- Dropdown -->
+                    <li class="relative group">
+                        <button
+                            class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white">
+                            Lainnya
+                        </button>
+                        <!-- Dropdown Content -->
+                        <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded w-40 z-10">
+                            <a href="{{ route('blank') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
+                                1</a>
+                            <a href="{{ route('blank') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
+                                2</a>
+                            <a href="{{ route('blank') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
+                                3</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

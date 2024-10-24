@@ -11,7 +11,7 @@
 
         <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-6 space-y-6 md:space-y-0">
             <!-- Card Paket -->
-            <div class="w-full bg-white border rounded-lg p-6 text-center shadow-xl" data-aos="fade-up">
+            <div class="w-full bg-white border rounded-lg py-8 px-10 text-justify shadow-xl" data-aos="fade-up">
                 {{-- Blank --}}
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur optio minima sapiente nesciunt!
                     Deserunt fugiat qui delectus maiores incidunt voluptas reiciendis illum in. Ut, earum nobis. Iusto
