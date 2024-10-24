@@ -35,12 +35,12 @@
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="forms-elements.html">
+                    <a href="{{ route('road-race.index') }}">
                         <i class="bi bi-circle"></i><span>Kategori Road Race</span>
                     </a>
                 </li>
                 <li>
-                    <a href="forms-layouts.html">
+                    <a href="{{ route('kategori.index') }}">
                         <i class="bi bi-circle"></i><span>Kategori Lari</span>
                     </a>
                 </li>
@@ -52,12 +52,12 @@
                 <span>Kategori Lari</span>
             </a>
         </li><!-- End Profile Page Nav --> --}}
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="">
                 <i class="bi bi-people"></i>
                 <span>Manajemen User</span>
             </a>
-        </li><!-- End Profile Page Nav -->
+        </li><!-- End Profile Page Nav --> --}}
         <li class="nav-item">
             <a class="nav-link {{ request()->is('/') ? '' : 'collapsed' }}" href="{{ route('settings') }}">
                 <i class="bi bi-people"></i>

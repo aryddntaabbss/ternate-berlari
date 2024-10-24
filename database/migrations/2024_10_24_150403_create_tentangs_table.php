@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('road_race', function (Blueprint $table) {
+        Schema::create('tentang', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('biaya');
-            $table->boolean('paling_laris')->default(false); // Field paling_laris
+            $table->string('gambar_tentang');
+            $table->longText('deskripsi_tentang');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('road_race');
+        Schema::dropIfExists('tentang');
     }
 };

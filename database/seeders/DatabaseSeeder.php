@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Kategori;
 use App\Models\Peserta;
 use App\Models\RoadRace;
 use App\Models\Setting;
@@ -101,6 +102,18 @@ class DatabaseSeeder extends Seeder
             'nama_rekening' => 'John Doe',
             'created_at' => now(),
             'updated_at' => now(),
+        ]);
+        DB::table('tentang')->insert([
+            'deskripsi_tentang' => 'Isi Tentang Website Ini',
+            'gambar_tentang' => 'gambar',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        Kategori::create([
+            'name' => 'Pelajar',
+            'umur' => '30 - 20',
+            'gender' => 'Perempuan/Laki-Laki',
         ]);
     }
 }

@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Rekening;
 use App\Models\Setting;
 use App\Models\SosialMedia;
+use App\Models\Tentang;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
     function index() {
         return view('backend.settings',[
-            'bank'=>Rekening::first()
+            'bank'=>Rekening::first(),
+            'tentang'=>Tentang::first(),
         ]);
     }
 

@@ -49,12 +49,8 @@
                             <!-- Description -->
                             <div class="mb-3">
                                 <label for="deskripsi" class="form-label">Deskripsi</label>
-
-                                <!-- Input Trix -->
-                                <input id="deskripsi" type="hidden" name="deskripsi" value="{{ $websiteDeskripsi }}">
-                                <trix-editor input="deskripsi"></trix-editor>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi">{{ $websiteDeskripsi }}</textarea>
                             </div>
-
 
                             <!-- Keywords -->
                             <div class="mb-3">
@@ -171,28 +167,29 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Tentang</h5>
-                        <form action="{{ route('banks.update') }}" method="POST">
+                        <form action="{{ route('tentang.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+
+                            <!-- Logo Upload -->
+                            <img src="{{ asset('storage/' . $tentang->gambar_tentang) }}" alt="" width="100">
+                            <!-- Input Gambar -->
                             <div class="mb-3">
-                                <label for="nama_bank" class="form-label">Nama Bank</label>
-                                <input type="text" class="form-control" id="nama_bank" name="nama_bank"
-                                    value="{{ $bank->nama_bank }}">
+                                <label for="gambar_tentang" class="form-label">Upload Gambar</label>
+                                <input type="file" class="form-control" id="gambar_tentang" name="gambar_tentang"
+                                    accept="image/*">
                             </div>
 
+                            <!-- Input Deskripsi dengan Trix Editor -->
                             <div class="mb-3">
-                                <label for="no_rekening" class="form-label">No. Rekening</label>
-                                <input type="text" class="form-control" id="no_rekening" name="no_rekening"
-                                    value="{{ $bank->no_rekening }}">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="nama_rekening" class="form-label">Nama Rekening</label>
-                                <input type="text" class="form-control" id="nama_rekening" name="nama_rekening"
-                                    value="{{ $bank->nama_rekening }}">
+                                <label for="deskripsi_tentang" class="form-label">Deskripsi Bank</label>
+                                <input id="deskripsi_tentang" type="hidden" name="deskripsi_tentang"
+                                    value="{{ $tentang->deskripsi_tentang }}">
+                                <trix-editor input="deskripsi_tentang"></trix-editor>
                             </div>
 
                             <button type="submit" class="btn btn-outline-primary">Update</button>
@@ -200,7 +197,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
     </section>
 @endsection
