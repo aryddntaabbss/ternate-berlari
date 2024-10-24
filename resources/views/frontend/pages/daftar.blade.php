@@ -175,6 +175,3 @@
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
-
-{{-- di tabel peserta kolomnya ada "nama_lengkap, nik, golongan_darah, pekerjaan, no_tlp, alamat, komunitas,
-riwayat_penyakit, kontak_darurat, kategori_usia, size_jersey, bukti_bayar,. --}}
