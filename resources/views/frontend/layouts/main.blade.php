@@ -24,6 +24,19 @@
 
         @vite(['resources/css/app.css','resources/js/app.js'])
 
+        @notifyCss
+        <style>
+            .notify {
+                position: fixed;
+                /* Ensure it is fixed */
+                top: 20px;
+                /* Adjust as needed */
+                right: 20px;
+                /* Adjust as needed */
+                z-index: 9999;
+                /* Make sure this is a high value */
+            }
+        </style>
     </head>
 
     <body class="min-h-screen flex flex-col bg-gray-100 overflow-x-hidden">
@@ -37,6 +50,9 @@
         @include('frontend.layouts.footer')
 
         <script src="https://cdn.tailwindcss.com"></script>
+
+        <x-notify::notify />
+        @notifyJs
     </body>
 
 </html>

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BerandaController::class, 'index'])->name('index');
 Route::get('/data-peserta', [BerandaController::class, 'peserta'])->name('peserta');
 Route::get('/daftar', [BerandaController::class, 'daftar'])->name('daftar');
+Route::post('/peserta/store', [BerandaController::class, 'store'])->name('peserta.store');
 
 Route::get('/blank', function () {
     return view('frontend.pages.blank');
