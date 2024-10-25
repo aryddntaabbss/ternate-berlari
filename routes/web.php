@@ -22,7 +22,7 @@ Route::get('/data-peserta', [BerandaController::class, 'peserta'])->name('pesert
 Route::get('/daftar', [BerandaController::class, 'daftar'])->name('daftar');
 Route::post('/peserta/store', [BerandaController::class, 'store'])->name('peserta.store');
 
-Route::get('/{pages:slug}', [PageController::class, 'show'])->name('blank');
+Route::get('/Menu/{pages:slug}', [PageController::class, 'show'])->name('blank');
 
 
 // Route yang membutuhkan autentikasi
