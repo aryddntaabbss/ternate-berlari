@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         RoadRace::create([
-            'name' => '10',
+            'nama' => '10',
             'biaya' => 180000,
             'paling_laris' => true,
         ]);
