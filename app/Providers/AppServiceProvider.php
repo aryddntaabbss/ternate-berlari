@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\DeskripsiWebsite;
+use App\Models\Menu;
 use App\Models\Setting;
 use App\Models\SosialMedia;
 use Illuminate\Support\ServiceProvider;
@@ -73,6 +74,20 @@ class AppServiceProvider extends ServiceProvider
         $view->with('socialMedia', $socialMediaData);
 
         // Penggunaan contoh: <p>Facebook: {{ $socialMedias['Facebook'] ?? 'Not Set' }}</p>
+    });
+
+       // Ambil menu dengan status aktif dan halaman dengan status aktif
+    // Bagikan hanya menu yang memiliki pages dengan status 'aktif' ke semua view
+    View::composer('*', function ($view) {
+        $menus = Menu::whereHas('pages', function ($query) {
+                $query->where('status', 'aktif'); // Kondisi where pada pages
+            })
+            ->with(['pages' => function ($query) {
+                $query->where('status', 'aktif'); // Eager load hanya pages aktif
+            }])
+            ->get();
+
+        $view->with('menus', $menus);
     });
 
     }

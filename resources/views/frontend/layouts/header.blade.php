@@ -42,27 +42,26 @@
                             class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
                             aria-current="page">Ukuran Baju</a>
                     </li>
-                    <!-- Dropdown -->
-                    <li class="relative group" id="dropdown">
-                        <button
-                            class="block py-2 pr-4 pl-3 rounded-sm lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
-                            aria-haspopup="true" aria-expanded="false">
-                            Lainnya
-                        </button>
-                        <!-- Dropdown Content -->
-                        <div class="absolute hidden group-hover:block bg-white shadow-xl mt-2 py-2 rounded border-2 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
-                            id="dropdown-menu">
-                            <a href="{{ route('blank') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
-                                1</a>
-                            <a href="{{ route('blank') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
-                                2</a>
-                            <a href="{{ route('blank') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
-                                3</a>
-                        </div>
-                    </li>
+                    @foreach ($menus as $menu)
+                        <!-- Dropdown -->
+                        <li class="relative group" id="dropdown">
+                            <button
+                                class="block py-2 pr-4 pl-3 rounded-sm lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
+                                aria-haspopup="true" aria-expanded="false">
+                                {{ $menu->name }}
+                            </button>
+                            <!-- Dropdown Content -->
+                            <div class="absolute hidden group-hover:block bg-white shadow-xl mt-2 py-2 rounded border-2 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
+                                id="dropdown-menu">
+                                @foreach ($menu->pages as $item)
+                                    <a href="{{ route('blank', $item->slug) }}"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">
+                                        {{ $item->name }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </li>
+                    @endforeach
                     <li>
                         <a href="{{ route('peserta') }}"
                             class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data

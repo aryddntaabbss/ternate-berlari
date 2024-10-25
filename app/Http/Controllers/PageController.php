@@ -13,7 +13,18 @@ class PageController extends Controller
         return view('backend.pages',[
             'pages'=>Page::all()
         ]);
+    
     }
+
+    public function show($slug)
+    {
+        // Ambil data page berdasarkan slug
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        // Kirim data menu dan page ke view
+        return view('frontend.pages.blank', compact( 'page'));
+    }
+
     function create() {
         return view('backend.create_pages',[
             'menu'=>Menu::all()

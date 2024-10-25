@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BerandaController;
-
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +22,8 @@ Route::get('/data-peserta', [BerandaController::class, 'peserta'])->name('pesert
 Route::get('/daftar', [BerandaController::class, 'daftar'])->name('daftar');
 Route::post('/peserta/store', [BerandaController::class, 'store'])->name('peserta.store');
 
-Route::get('/blank', function () {
-    return view('frontend.pages.blank');
-})->name('blank');
+Route::get('/{pages:slug}', [PageController::class, 'show'])->name('blank');
+
 
 // Route yang membutuhkan autentikasi
 Route::middleware(['auth'])->group(function () {
