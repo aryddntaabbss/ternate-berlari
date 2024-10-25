@@ -1,6 +1,7 @@
 @extends('frontend.layouts.main')
 
 @section('body')
+@include('frontend.layouts.header')
 
 <!-- Section untuk Data Peserta -->
 <section class="section mt-5">
