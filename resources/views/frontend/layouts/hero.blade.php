@@ -47,7 +47,7 @@
 
         <!-- Gambar Hero -->
         <div class="hidden lg:flex lg:col-span-5 justify-center lg:justify-end items-center">
-            <img src="{{ asset('assets/img/.png') }}" alt="Running Girl"
+            <img src="{{ asset('assets/img/tentang.png') }}" alt="Running Girl"
                 class="w-80 max-w-xl md:max-w-md lg:max-w-lg h-auto object-contain">
         </div>
     </div>
