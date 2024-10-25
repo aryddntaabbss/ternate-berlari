@@ -57,7 +57,12 @@
                             </tr>
                             <tr>
                                 <th>Kategori Usia</th>
-                                <td>{{ $peserta->kategori_usia }}</td>
+                                <td>{{ $peserta->kategori->name }} {{ $peserta->kategori->umur }}
+                                    ({{ $peserta->kategori->gender }})</td>
+                            </tr>
+                            <tr>
+                                <th>Road Race</th>
+                                <td>{{ $peserta->roadRace->nama }} <small class="text-muted">Km</small></td>
                             </tr>
                             <tr>
                                 <th>Ukuran Jersey</th>
