@@ -42,6 +42,12 @@
                             class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
                             aria-current="page">Ukuran Baju</a>
                     </li>
+
+                    <li>
+                        <a href="{{ route('peserta') }}"
+                            class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data
+                            Peserta</a>
+                    </li>
                     @foreach ($menus as $menu)
                         <!-- Dropdown -->
                         <li class="relative group" id="dropdown">
@@ -62,12 +68,6 @@
                             </div>
                         </li>
                     @endforeach
-                    <li>
-                        <a href="{{ route('peserta') }}"
-                            class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data
-                            Peserta</a>
-                    </li>
-
                 </ul>
             </div>
         </div>
