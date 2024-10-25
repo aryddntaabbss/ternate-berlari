@@ -57,41 +57,36 @@
     </div>
 </section>
 
-<!-- Image and Text Section -->
+<!-- Tentang Section -->
 <section id="about" class="mx-auto px-4 py-12 flex flex-col md:flex-row gap-9 justify-center items-center">
-    <!-- Image  -->
+    <!-- Image -->
     <div class="lg:flex lg:col-span-5 justify-end items-center" data-aos="fade-right">
-        <img src="{{ asset('assets/img/hero.png') }}" alt="Running Girl" class="h-3/6 max-h-[300px] object-contain">
+        <img src="{{ asset('storage/' . ($tentang->gambar_tentang ?? 'tentang.png')) }}" alt="Tentang Image"
+            class="h-3/6 max-h-[300px] object-contain">
     </div>
 
     <!-- Text -->
     <div class="w-full md:w-1/2 md:pl-8" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-yellow-400 mb-4">Engaging Title Goes Here</h2>
+        <h2 class="text-3xl font-bold text-yellow-400 mb-4" data-aos="fade-up">TENTANG KAMI</h2>
         <p class="text-gray-600 mb-4">
-            This is an example of a paragraph placed to the right of the image. It can be used to provide
-            additional information or context related to the image shown. The layout adjusts automatically
-            to maintain a responsive appearance across different screen sizes.
-        </p>
-        <p class="text-gray-600">
-            The layout uses a flexbox to align the image and text side by side on larger screens, while
-            stacking them vertically on smaller screens for better readability.
+            {!! $tentang->deskripsi_tentang ?? 'Tentang kami tidak ditemukan.' !!}
         </p>
     </div>
 </section>
 
 <!-- Kategori Section -->
-<section id="kategori" class=" mx-auto px-4 text-center py-8">
+<section id="kategori" class="mx-auto px-4 text-center py-8">
     <h2 class="text-3xl font-bold text-yellow-400 mb-4" data-aos="fade-up">KATEGORI PELARI</h2>
-    <!-- Menggunakan flexbox dan grid untuk meratakan card ke tengah secara responsif -->
-    <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-8 md:px-8 justify-items-center
-            bg-none sm:bg-[url('/assets/img/road.png')]" data-aos="zoom-out">
-        <!-- Feature Card -->
-        @foreach ([['title' => 'Pelajar Pria/Wanita', 'age' => '15 - 17 Tahun'],
+    <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-8 md:px-8 justify-items-center bg-none sm:bg-[url('/assets/img/road.png')]"
+        data-aos="zoom-out">
+        @foreach ([
+        ['title' => 'Pelajar Pria/Wanita', 'age' => '15 - 17 Tahun'],
         ['title' => 'Elit(Atlet) Pria/Wanita', 'age' => '17 - 34 Tahun'],
         ['title' => 'Hobbies Pria/Wanita', 'age' => '18 - 34 Tahun'],
         ['title' => 'Master A Pria/Wanita', 'age' => '35 - 44 Tahun'],
         ['title' => 'Master B Pria/Wanita', 'age' => '45 - 50 Tahun'],
-        ['title' => 'Master C Pria/Wanita', 'age' => '50 Tahun +']] as $category)
+        ['title' => 'Master C Pria/Wanita', 'age' => '50 Tahun +']
+        ] as $category)
         <div class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-48"
             data-aos="fade-up">
             <h3 class="text-md font-semibold text-white">{{ $category['title'] }}</h3>

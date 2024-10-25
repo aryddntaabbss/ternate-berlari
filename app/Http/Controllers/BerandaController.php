@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peserta;
+use App\Models\Tentang;
 use App\Models\Rekening;
 use Illuminate\Http\Request;
 
@@ -15,13 +16,19 @@ class BerandaController extends Controller
      */
     public function index()
     {
+        // Retrieve the first "Tentang" entry from the database
+        $tentang = Tentang::first();
+
+        // Prepare other data
         $data = [
             'title' => 'Selamat Datang di Beranda!',
             'description' => 'Selamat Datang di Laman Resmi Ternate Berlari',
+            'tentang' => $tentang, // Pass the "tentang" data to the view
         ];
 
         return view('frontend.pages.index', $data);
     }
+
 
     /**
      * Menampilkan halaman data peserta di frontend.
@@ -52,7 +59,7 @@ class BerandaController extends Controller
             'nik' => 'required|string|max:16', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
             'golongan_darah' => 'required|string|max:3',
             'pekerjaan' => 'required|string|max:255',
-            'no_tlp' => 'required|string|max:15', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
+            'no_tlp' => 'required|string|max:15|min:11', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
             'alamat' => 'required|string|max:255',
             'komunitas' => 'required|string|max:255',
             'riwayat_penyakit' => 'required|string|max:255',

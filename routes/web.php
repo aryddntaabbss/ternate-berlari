@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BerandaController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
