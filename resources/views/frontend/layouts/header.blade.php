@@ -1,5 +1,5 @@
 <!-- Responsive Header -->
-<header class="top-0 left-0 w-full bg-white shadow-md z-50">
+<header class="top-0 left-0 w-full py-2 bg-white shadow-md z-50">
     <nav class="border-gray-200 px-4 lg:px-6 py-1">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <!-- Logo -->
@@ -43,31 +43,32 @@
                             aria-current="page">Ukuran Baju</a>
                     </li>
 
+                    @foreach ($menus as $menu)
+                    <!-- Dropdown -->
+                    <li class="group" id="dropdown">
+                        <button
+                            class="block py-2 pr-4 pl-3 rounded-sm lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
+                            aria-haspopup="true" aria-expanded="false">
+                            {{ $menu->name }}
+                        </button>
+                        <!-- Dropdown Content -->
+                        <div class="absolute hidden group-hover:block bg-white shadow-xl mt-2 py-2 px-2 rounded border-2 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
+                            id="dropdown-menu">
+                            @foreach ($menu->pages as $item)
+                            <a href="{{ route('blank', $item->slug) }}"
+                                class="block w-auto px-2 rounded-sm py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">
+                                {{ $item->name }}
+                            </a>
+                            @endforeach
+                        </div>
+                    </li>
+                    @endforeach
+
                     <li>
                         <a href="{{ route('peserta') }}"
                             class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data
                             Peserta</a>
                     </li>
-                    @foreach ($menus as $menu)
-                        <!-- Dropdown -->
-                        <li class="relative group" id="dropdown">
-                            <button
-                                class="block py-2 pr-4 pl-3 rounded-sm lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
-                                aria-haspopup="true" aria-expanded="false">
-                                {{ $menu->name }}
-                            </button>
-                            <!-- Dropdown Content -->
-                            <div class="absolute hidden group-hover:block bg-white shadow-xl mt-2 py-2 rounded border-2 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
-                                id="dropdown-menu">
-                                @foreach ($menu->pages as $item)
-                                    <a href="{{ route('blank', $item->slug) }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">
-                                        {{ $item->name }}
-                                    </a>
-                                @endforeach
-                            </div>
-                        </li>
-                    @endforeach
                 </ul>
             </div>
         </div>
