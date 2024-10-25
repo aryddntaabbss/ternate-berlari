@@ -45,12 +45,12 @@
                     <!-- Dropdown -->
                     <li class="relative group" id="dropdown">
                         <button
-                            class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
+                            class="block py-2 pr-4 pl-3 rounded-sm lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
                             aria-haspopup="true" aria-expanded="false">
                             Lainnya
                         </button>
                         <!-- Dropdown Content -->
-                        <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
+                        <div class="absolute hidden group-hover:block bg-white shadow-xl mt-2 py-2 rounded border-2 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
                             id="dropdown-menu">
                             <a href="{{ route('blank') }}"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link

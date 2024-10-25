@@ -1,6 +1,7 @@
 @extends('frontend.layouts.main')
 
 @section('body')
+@include('frontend.layouts.header')
 @include('frontend.layouts.hero')
 
 <!-- Pricing Section -->

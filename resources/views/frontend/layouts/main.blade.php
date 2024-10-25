@@ -41,8 +41,6 @@
 
     <body class="min-h-screen flex flex-col bg-gray-100 overflow-x-hidden">
 
-        @include('frontend.layouts.header')
-
         <main class="flex-grow">
             @yield('body')
         </main>
