@@ -143,7 +143,7 @@
                         @foreach ($road_races as $road_race)
                             <tr>
                                 <td>{{ $road_race->nama }} <small class="text-muted">Km</small></td>
-                                <td>Rp. {{ number_format($road_race->biaya ?? 0, 0, ',', '.') }}</td>
+                                <td>Rp. {{ $road_race->biaya }}</td>
                                 <td>
                                     @if ($road_race->paling_laris)
                                         <span class="badge bg-success">Ya</span>
@@ -221,8 +221,7 @@
 
                     // Isi data di dalam form edit
                     document.getElementById('editNama').value = nama;
-                    document.getElementById('editBiaya').value = biaya.replace(/Rp. /, '').replace(
-                        /\./g, '');
+                    document.getElementById('editBiaya').value = formatRupiah(biaya);
 
                     // Ubah action form edit agar mengarah ke route update dengan id yang benar
                     document.getElementById('editRoadRaceForm').setAttribute('action',
