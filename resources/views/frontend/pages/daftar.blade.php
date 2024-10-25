@@ -30,8 +30,9 @@
                         <p class="text-gray-600">: {{ $bank->nama_rekening }}</p>
                     </div>
                 </div>
-                <h3 class="text-5xl font-bold text-gray-600 mb-2">21<span class="text-base">KM</span></h3>
-                <div class="text-2xl font-bold text-yellow-400 mb-2">Rp350.000</div>
+                <h3 class="text-5xl font-bold text-gray-600 mb-2">{{ $road_race->nama }}<span
+                        class="text-base">KM</span></h3>
+                <div class="text-2xl font-bold text-yellow-400 mb-2">Rp. {{ $road_race->biaya }}</div>
 
                 <ul class="text-sm text-gray-400 space-y-2 m-4 text-left">
                     <li>✔️ Jersey Running</li>
@@ -119,16 +120,16 @@
                         </select>
                     </div>
 
+                    <input type="hidden" name="id_road_race" id="" value="{{ $road_race->id }}">
                     <!-- Kategori Usia -->
                     <div class="col-span-1">
                         <label for="kategori_usia" class="block text-sm font-medium text-gray-700">Kategori Usia</label>
-                        <select name="kategori_usia" id="kategori_usia" required
+                        <select name="id_kategori" id="kategori_usia" required
                             class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             <option value="">-- Pilih Kategori Usia --</option>
-                            <option value="anak-anak">Anak-Anak</option>
-                            <option value="remaja">Remaja</option>
-                            <option value="dewasa">Dewasa</option>
-                            <option value="lansia">Lansia</option>
+                            @foreach ($kategori as $ku)
+                            <option value="{{ $ku->id }}">{{ $ku->name }}</option>
+                            @endforeach
                         </select>
                     </div>
 

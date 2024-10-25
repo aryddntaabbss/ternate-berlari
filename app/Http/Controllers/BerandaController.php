@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Peserta;
 use App\Models\Tentang;
 use App\Models\Rekening;
+use App\Models\RoadRace;
 use Illuminate\Http\Request;
 
 class BerandaController extends Controller
@@ -16,6 +18,8 @@ class BerandaController extends Controller
      */
     public function index()
     {
+
+        $road_race = RoadRace::all();
         // Retrieve the first "Tentang" entry from the database
         $tentang = Tentang::first();
 
@@ -24,6 +28,7 @@ class BerandaController extends Controller
             'title' => 'Selamat Datang di Beranda!',
             'description' => 'Selamat Datang di Laman Resmi Ternate Berlari',
             'tentang' => $tentang, // Pass the "tentang" data to the view
+            'road_race' => $road_race, // Pass the "tentang" data to the view
         ];
 
         return view('frontend.pages.index', $data);
@@ -43,12 +48,17 @@ class BerandaController extends Controller
         return view('frontend.pages.data-peserta', compact('data_peserta'));
     }
 
-    public function daftar()
+    public function daftar($id)
     {
+        $road_race = RoadRace::findOrFail($id);
         $bank = Rekening::first();
 
         // Return ke view 'frontend.pages.daftar' dengan daftar
-        return view('frontend.pages.daftar', compact('bank'));
+        return view('frontend.pages.daftar', [
+            'bank' => $bank,
+            'road_race' => $road_race,
+            'kategori' => Kategori::all(),
+        ]);
     }
 
     public function store(Request $request)
@@ -64,7 +74,8 @@ class BerandaController extends Controller
             'komunitas' => 'required|string|max:255',
             'riwayat_penyakit' => 'required|string|max:255',
             'kontak_darurat' => 'required|string|max:15', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-            'kategori_usia' => 'required|string',
+            'id_kategori' => 'required',
+            'id_road_race' => 'required',
             'size_jersey' => 'required|string',
             'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
         ]);
@@ -84,7 +95,8 @@ class BerandaController extends Controller
             'komunitas' => $request->komunitas,
             'riwayat_penyakit' => $request->riwayat_penyakit,
             'kontak_darurat' => $request->kontak_darurat,
-            'kategori_usia' => $request->kategori_usia,
+            'id_kategori' => $request->id_kategori,
+            'id_road_race' => $request->id_road_race,
             'size_jersey' => $request->size_jersey,
             'bukti_bayar' => $fileName,
         ]);
