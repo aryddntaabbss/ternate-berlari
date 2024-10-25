@@ -15,7 +15,7 @@ class PesertaController extends Controller
     public function show($id)
     {
         // Ambil data peserta berdasarkan ID
-        $peserta = Peserta::findOrFail($id);
+        $peserta = Peserta::with(['roadRace','kategori'])->findOrFail($id);
 
         // Return ke view detail peserta
         return view('backend.peserta_show', compact('peserta'));

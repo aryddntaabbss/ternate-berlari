@@ -39,8 +39,8 @@
                                 <form action="{{ route('road-race.store') }}" method="POST">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="namaRoadRace" class="form-label">Nama</label>
-                                        <input type="text" name="nama"
+                                        <label for="namaRoadRace" class="form-label">Jarak</label>
+                                        <input type="number" name="nama"
                                             class="form-control @error('nama') is-invalid @enderror" id="namaRoadRace"
                                             placeholder="Masukkan nama" required>
                                         @error('nama')
@@ -92,8 +92,8 @@
                                     @csrf
                                     @method('PUT')
                                     <div class="mb-3">
-                                        <label for="editNama" class="form-label">Nama</label>
-                                        <input type="text" name="nama"
+                                        <label for="editNama" class="form-label">Jarak</label>
+                                        <input type="number" name="nama"
                                             class="form-control @error('nama') is-invalid @enderror" id="editNama"
                                             required>
                                         @error('nama')
@@ -133,7 +133,7 @@
                 <table class="table datatable">
                     <thead>
                         <tr>
-                            <th>Nama</th>
+                            <th>Jarak</th>
                             <th>Biaya</th>
                             <th>Paling Laris</th>
                             <th>Aksi</th>
@@ -143,7 +143,7 @@
                         @foreach ($road_races as $road_race)
                             <tr>
                                 <td>{{ $road_race->nama }} <small class="text-muted">Km</small></td>
-                                <td>Rp. {{ number_format($road_race->biaya ?? 0, 0, ',', '.') }}</td>
+                                <td>Rp. {{ $road_race->biaya }}</td>
                                 <td>
                                     @if ($road_race->paling_laris)
                                         <span class="badge bg-success">Ya</span>
@@ -221,8 +221,7 @@
 
                     // Isi data di dalam form edit
                     document.getElementById('editNama').value = nama;
-                    document.getElementById('editBiaya').value = biaya.replace(/Rp. /, '').replace(
-                        /\./g, '');
+                    document.getElementById('editBiaya').value = formatRupiah(biaya);
 
                     // Ubah action form edit agar mengarah ke route update dengan id yang benar
                     document.getElementById('editRoadRaceForm').setAttribute('action',

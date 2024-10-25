@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('komunitas');
             $table->string('riwayat_penyakit');
             $table->string('kontak_darurat');
-            $table->string('kategori_usia');
             $table->enum('size_jersey', ['S', 'M', 'L', 'XL', 'XXL']);
             $table->string('bukti_bayar');
             $table->enum('status', ['terverifikasi', 'tidak terverifikasi'])->default('tidak terverifikasi');

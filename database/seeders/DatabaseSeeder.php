@@ -59,9 +59,10 @@ class DatabaseSeeder extends Seeder
             'komunitas' => 'Komunitas A',
             'riwayat_penyakit' => 'Tidak ada',
             'kontak_darurat' => '081234567891',
-            'kategori_usia' => 'Dewasa',
             'size_jersey' => 'L',
             'bukti_bayar' => 'assets/img/Logo.png',
+            'id_road_race' => 1,
+            'id_kategori' => 1,
         ]);
 
         Peserta::create([
@@ -74,9 +75,11 @@ class DatabaseSeeder extends Seeder
             'komunitas' => 'Komunitas B',
             'riwayat_penyakit' => 'Asma',
             'kontak_darurat' => '081234567892',
-            'kategori_usia' => 'Dewasa',
             'size_jersey' => 'M',
             'bukti_bayar' => 'assets/img/Logo.png',
+            'id_road_race' => 2,
+            'id_kategori' => 2,
+
         ]);
 
         DB::table('deskripsi_website')->insert([
@@ -118,7 +121,12 @@ class DatabaseSeeder extends Seeder
         Kategori::create([
             'name' => 'Pelajar',
             'umur' => '30 - 20',
-            'gender' => 'Perempuan/Laki-Laki',
+            'gender' => 'Pria/Wanita',
+        ]);
+        Kategori::create([
+            'name' => 'Mahasiswa',
+            'umur' => '30 - 20',
+            'gender' => 'Pria/Wanita',
         ]);
     }
 }
