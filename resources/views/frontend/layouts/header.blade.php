@@ -3,7 +3,7 @@
     <nav class="border-gray-200 px-4 lg:px-6 py-1">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <!-- Logo -->
-            <a href="{{ route('index') }}" class=" flex items-center">
+            <a href="{{ route('index') }}" class="flex items-center">
                 <img src="{{ asset('storage/' . $websiteLogo) }}" class="mr-3 h-10 sm:h-10" alt="Logo" />
             </a>
 
@@ -42,19 +42,16 @@
                             class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
                             aria-current="page">Ukuran Baju</a>
                     </li>
-                    <li>
-                        <a href="{{ route('peserta') }}"
-                            class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data
-                            Peserta</a>
-                    </li>
                     <!-- Dropdown -->
-                    <li class="relative group">
+                    <li class="relative group" id="dropdown">
                         <button
-                            class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white">
+                            class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:text-primary-700 lg:p-2 hover:bg-yellow-500 hover:text-white"
+                            aria-haspopup="true" aria-expanded="false">
                             Lainnya
                         </button>
                         <!-- Dropdown Content -->
-                        <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded w-40 z-10">
+                        <div class="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 rounded focus:border-yellow-500 focus:ring-yellow-500 w-40 z-10"
+                            id="dropdown-menu">
                             <a href="{{ route('blank') }}"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-500 hover:text-white">Link
                                 1</a>
@@ -66,18 +63,39 @@
                                 3</a>
                         </div>
                     </li>
+                    <li>
+                        <a href="{{ route('peserta') }}"
+                            class="block py-2 pr-4 pl-3 rounded lg:border-0 lg:p-2 hover:bg-yellow-500 hover:text-white">Data
+                            Peserta</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<!-- JavaScript for Menu Toggle -->
+<!-- JavaScript for Menu Toggle and Dropdown -->
 <script>
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuToggle.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+    });
+
+    // Dropdown functionality
+    const dropdownButton = document.querySelector('#dropdown > button');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+        }
     });
 </script>
