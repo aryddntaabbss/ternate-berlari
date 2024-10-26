@@ -18,6 +18,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
+        $data_peserta = Peserta::all();
 
         $road_race = RoadRace::all();
         // Retrieve the first "Tentang" entry from the database
@@ -28,7 +29,8 @@ class BerandaController extends Controller
             'title' => 'Selamat Datang di Beranda!',
             'description' => 'Selamat Datang di Laman Resmi Ternate Berlari',
             'tentang' => $tentang, // Pass the "tentang" data to the view
-            'road_race' => $road_race, // Pass the "tentang" data to the view
+            'road_race' => $road_race, // Pass the "road_race" data to the view
+            'data_peserta' => $data_peserta, // Pass the "data_peserta" data to the view
         ];
 
         return view('frontend.pages.index', $data);
