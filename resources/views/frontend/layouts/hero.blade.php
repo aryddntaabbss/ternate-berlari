@@ -11,11 +11,7 @@
                 <p class="text-lg font-semibold md:text-xl lg:text-2xl text-white mb-6 lg:mb-8">
                     {{ $websiteTitle }} adalah sebuah ajang lari yang menyatukan komunitas pecinta olahraga di Ternate,
                     menawarkan
-                    pengalaman lari di antara pemandangan indah serta budaya kaya khas Kepulauan Maluku Utara. Melalui
-                    acara ini,
-                    kami berkomitmen menginspirasi gaya hidup sehat, mempererat kebersamaan, dan mempromosikan keindahan
-                    alam
-                    Ternate kepada masyarakat luas.
+                    pengalaman lari di antara pemandangan indah serta budaya kaya khas Kepulauan Maluku Utara.
                 </p>
             </div>
 
