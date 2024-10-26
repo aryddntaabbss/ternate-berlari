@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('tentang')->insert([
             'deskripsi_tentang' => 'Isi Tentang Website Ini',
-            'gambar_tentang' => 'gambar',
+            'gambar_tentang' => 'hero.png',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

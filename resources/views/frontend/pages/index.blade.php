@@ -51,22 +51,18 @@
     <h2 class="text-3xl font-bold text-yellow-400 mb-4" data-aos="fade-up">KATEGORI PELARI</h2>
     <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-8 md:px-8 justify-items-center bg-none sm:bg-[url('/assets/img/road.png')]"
         data-aos="zoom-out">
-        @foreach ($data_peserta as $kp)
-        {{-- ([
-        ['title' => 'Pelajar Pria/Wanita', 'age' => '15 - 17 Tahun'],
-        ['title' => 'Elit(Atlet) Pria/Wanita', 'age' => '17 - 34 Tahun'],
-        ['title' => 'Hobbies Pria/Wanita', 'age' => '18 - 34 Tahun'],
-        ['title' => 'Master A Pria/Wanita', 'age' => '35 - 44 Tahun'],
-        ['title' => 'Master B Pria/Wanita', 'age' => '45 - 50 Tahun'],
-        ['title' => 'Master C Pria/Wanita', 'age' => '50 Tahun +']
-        ] as $category) --}}
+        @if($kategori->isEmpty())
+        <p class="text-gray-600 text-lg" data-aos="fade-up">Tidak ada kategori pelari</p>
+        @else
+        @foreach ($kategori as $ktgpeserta)
         <div class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-48"
             data-aos="fade-up">
-            <h3 class="text-md font-semibold text-white">{{ $kp->kategori->name }} {{ $kp->kategori->gender }}
+            <h3 class="text-md font-semibold text-white">{{ $ktgpeserta->name }} {{ $ktgpeserta->gender }}
             </h3>
-            <p class="mt-2 text-gray-300">{{ $kp->kategori->umur }} Tahun</p>
+            <p class="mt-2 text-gray-300">{{ $ktgpeserta->umur }} Tahun</p>
         </div>
         @endforeach
+        @endif
     </div>
 </section>
 
