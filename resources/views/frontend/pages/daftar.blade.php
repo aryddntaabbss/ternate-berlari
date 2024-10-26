@@ -143,23 +143,32 @@
                             <option value="M">M</option>
                             <option value="L">L</option>
                             <option value="XL">XL</option>
-                            <option value="XL">XXL</option>
+                            <option value="XXL">XXL</option>
                         </select>
                     </div>
 
                     <!-- Bukti Bayar -->
                     <div class="col-span-1">
                         <label for="bukti_bayar" class="block text-sm font-medium pb-1 text-gray-700">Bukti Bayar
-                            (Upload
-                            Gambar)</label>
+                            (Upload Gambar)</label>
                         <input type="file" name="bukti_bayar" id="bukti_bayar" accept="image/*" required
                             class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:border-indigo-500 focus:ring-indigo-500">
                     </div>
 
+                    <!-- Checkbox untuk Syarat dan Ketentuan -->
+                    <div class="col-span-1 md:col-span-2 flex items-center">
+                        <input type="checkbox" name="syarat_ketentuan" id="syarat_ketentuan" class="mr-2">
+                        <label for="syarat_ketentuan" class="text-sm text-gray-700">Saya menyetujui
+                            <a href="{{ url('/Menu/syarat-ketentuan') }}" class="text-indigo-500 hover:underline">Syarat
+                                dan Ketentuan</a>
+                        </label>
+                    </div>
+
                     <!-- Tombol Submit -->
                     <div class="col-span-1 md:col-span-2 flex justify-center">
-                        <button type="submit"
-                            class="w-full py-2 px-4 bg-indigo-500 text-white font-semibold rounded-md shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button type="submit" id="submit_button"
+                            class="w-full py-2 px-4 bg-indigo-500 text-white font-semibold rounded-md shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            disabled>
                             Daftar
                         </button>
                     </div>
@@ -169,12 +178,23 @@
     </div>
 </section>
 
-<!-- Scroll to Top Button -->
-@include('frontend.components.to-top')
-
-@endsection
-
-@section('js')
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        const checkbox = $('#syarat_ketentuan');
+        const submitButton = $('#submit_button');
+        
+        // Set initial disabled state based on checkbox status
+        submitButton.prop('disabled', !checkbox.is(':checked'));
+
+        // Event listener for checkbox changes
+        checkbox.on('change', function() {
+            submitButton.prop('disabled', !checkbox.is(':checked'));
+        });
+    });
+</script>
+
+<!-- Scroll to Top Button -->
+@include('frontend.components.to-top')
 @endsection
