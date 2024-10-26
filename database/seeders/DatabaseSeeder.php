@@ -116,10 +116,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Kategori::create([
+            'name' => 'Tidak Ada',
+            'umur' => 'Tidak Ada',
+            'gender' => 'Tidak Ada',
+        ]);
+        Kategori::create([
             'name' => 'Pelajar',
             'umur' => '30 - 20',
             'gender' => 'Pria/Wanita',
         ]);
+
         Kategori::create([
             'name' => 'Mahasiswa',
             'umur' => '30 - 20',

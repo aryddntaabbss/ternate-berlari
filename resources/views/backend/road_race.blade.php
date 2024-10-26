@@ -155,11 +155,11 @@
                                     <!-- Tombol untuk mengubah status paling laris -->
                                     @if (!$road_race->paling_laris)
                                         <a href="{{ route('road-race.changePalingLaris', $road_race->id) }}"
-                                            class="btn btn-sm btn-outline-primary">
+                                            class="btn btn-outline-primary">
                                             <i class="bi bi-currency-dollar"></i>
                                         </a>
                                     @else
-                                        <span class="text-muted btn-sm btn btn-secondary"><i
+                                        <span class="text-muted btn btn-secondary"><i
                                                 class="bi bi-currency-dollar"></i></span>
                                     @endif
 
@@ -176,7 +176,7 @@
                                         style="display:inline-block;" id="delete-form-{{ $road_race->id }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-danger ms-1 btn-sm"
+                                        <button type="button" class="btn btn-danger ms-1"
                                             onclick="confirmDelete({{ $road_race->id }})"><i
                                                 class="bi bi-trash"></i></button>
                                     </form>

@@ -167,7 +167,7 @@
                                         style="display:inline-block;" id="delete-form-{{ $kategori->id }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-danger ms-1 btn-sm"
+                                        <button type="button" class="btn btn-danger ms-1"
                                             onclick="confirmDelete({{ $kategori->id }})"><i
                                                 class="bi bi-trash"></i></button>
                                     </form>
