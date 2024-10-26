@@ -72,8 +72,7 @@
                                             <div class="input-group has-validation">
                                                 <input type="email" name="email"
                                                     class="form-control @error('email') is-invalid @enderror"
-                                                    id="yourEmail" required
-                                                    value="{{ old('email', 'admin@gmail.com') }}">
+                                                    id="yourEmail" required value="{{ old('email') }}">
                                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                                 <div class="invalid-feedback">
                                                     @error('email')
@@ -91,7 +90,7 @@
                                             <div class="input-group has-validation">
                                                 <input type="password" name="password"
                                                     class="form-control @error('password') is-invalid @enderror"
-                                                    id="yourPassword" required autocomplete="off" value="admin123">
+                                                    id="yourPassword" required autocomplete="off">
                                                 <span class="input-group-text" id="inputGroupPrepend"><i
                                                         class="bi bi-lock"></i></span>
                                                 <div class="invalid-feedback">
