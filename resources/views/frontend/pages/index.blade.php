@@ -84,12 +84,14 @@
                 <p class="text-gray-600 text-lg" data-aos="fade-up">Tidak ada kategori pelari</p>
             @else
                 @foreach ($kategori as $ktgpeserta)
-                    <div class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-48"
-                        data-aos="fade-up">
-                        <h3 class="text-md font-semibold text-white">{{ $ktgpeserta->name }} {{ $ktgpeserta->gender }}
-                        </h3>
-                        <p class="mt-2 text-gray-300">{{ $ktgpeserta->umur }} Tahun</p>
-                    </div>
+                    @if ($ktgpeserta->id != 1)
+                        <div class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-48"
+                            data-aos="fade-up">
+                            <h3 class="text-md font-semibold text-white">{{ $ktgpeserta->name }} {{ $ktgpeserta->gender }}
+                            </h3>
+                            <p class="mt-2 text-gray-300">{{ $ktgpeserta->umur }} Tahun</p>
+                        </div>
+                    @endif
                 @endforeach
             @endif
         </div>
