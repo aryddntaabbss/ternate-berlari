@@ -148,30 +148,31 @@
                     </thead>
                     <tbody>
                         @foreach ($kategoris as $kategori)
-                            <tr>
-                                <td>{{ $kategori->name }}</td>
-                                <td>{{ $kategori->umur }}</td>
-                                <td>{{ $kategori->gender }}</td>
-                                <td>
-                                    <!-- Tombol Edit -->
-                                    <button type="button" class="btn btn-outline-warning btn-edit"
-                                        data-id="{{ $kategori->id }}" data-name="{{ $kategori->name }}"
-                                        data-umur="{{ $kategori->umur }}" data-gender="{{ $kategori->gender }}"
-                                        data-bs-toggle="modal" data-bs-target="#editKategoriModal">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
+                            @if ($kategori->name != 'Tidak Ada')
+                                <tr>
+                                    <td>{{ $kategori->name }}</td>
+                                    <td>{{ $kategori->umur }}</td>
+                                    <td>{{ $kategori->gender }}</td>
+                                    <td>
+                                        <!-- Tombol Edit -->
+                                        <button type="button" class="btn btn-outline-warning btn-edit"
+                                            data-id="{{ $kategori->id }}" data-name="{{ $kategori->name }}"
+                                            data-umur="{{ $kategori->umur }}" data-gender="{{ $kategori->gender }}"
+                                            data-bs-toggle="modal" data-bs-target="#editKategoriModal">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
 
 
-                                    <!-- Tombol Hapus -->
-                                    <form action="{{ route('kategori.destroy', $kategori->id) }}" method="POST"
-                                        style="display:inline-block;" id="delete-form-{{ $kategori->id }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" class="btn btn-danger ms-1 btn-sm"
-                                            onclick="confirmDelete({{ $kategori->id }})"><i
-                                                class="bi bi-trash"></i></button>
-                                    </form>
-                                    {{-- <!-- Tombol Delete -->
+                                        <!-- Tombol Hapus -->
+                                        <form action="{{ route('kategori.destroy', $kategori->id) }}" method="POST"
+                                            style="display:inline-block;" id="delete-form-{{ $kategori->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-danger ms-1"
+                                                onclick="confirmDelete({{ $kategori->id }})"><i
+                                                    class="bi bi-trash"></i></button>
+                                        </form>
+                                        {{-- <!-- Tombol Delete -->
                                     <button class="btn btn-outline-danger m-1"
                                         onclick="confirmDelete({{ $kategori->id }})">
                                         <i class="bi bi-trash"></i>
@@ -185,8 +186,9 @@
                                         @csrf
                                         @method('DELETE')
                                     </form> --}}
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

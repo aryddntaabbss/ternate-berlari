@@ -57,8 +57,13 @@
                             </tr>
                             <tr>
                                 <th>Kategori Usia</th>
-                                <td>{{ $peserta->kategori->name }} {{ $peserta->kategori->umur }}
-                                    ({{ $peserta->kategori->gender }})</td>
+                                @if ($peserta->kategori->id != 1)
+                                    <td>{{ $peserta->kategori->name }} {{ $peserta->kategori->umur }}
+                                        ({{ $peserta->kategori->gender }})</td>
+                                @else
+                                    <td>-</td>
+                                @endif
+
                             </tr>
                             <tr>
                                 <th>Road Race</th>
