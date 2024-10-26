@@ -9,7 +9,7 @@ class PesertaController extends Controller
 {
     function index() {
         return view('backend.data_peserta',[
-            'data_peserta' => Peserta::all()
+            'data_peserta' => Peserta::with(['kategori'])->get()
         ]);
     }
     public function show($id)
