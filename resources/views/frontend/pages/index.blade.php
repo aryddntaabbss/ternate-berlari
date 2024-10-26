@@ -8,52 +8,24 @@
 <section id="pendaftaran" class="mx-auto pb-12 px-4 max-w-5xl">
     <h2 class="text-3xl font-bold text-yellow-400 text-center py-16" data-aos="fade-up">PENDAFTARAN</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Paket Single -->
-        <div class="border rounded-lg my-3 p-6 text-center shadow-xl" data-aos="fade-right">
-            <h3 class="text-5xl font-bold text-gray-600 mb-2">5<span class="text-base">KM</span></h3>
-            <div class="text-2xl font-bold text-yellow-400 mb-2">Rp175.000</div>
-            <a href="{{ route('daftar') }}"
-                class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">Pilih
-                Paket</a>
-            <ul class="text-sm text-gray-400 space-y-2 mb-4 text-left">
-                <li>✔️ Jersey Running</li>
-                <li>✔️ Medali</li>
-                <li>✔️ BIB</li>
-            </ul>
-        </div>
-
-        <!-- Paket Premium -->
-        <div class="border-2 rounded-lg p-6 text-center shadow-xl border-yellow-400 relative" data-aos="zoom-out">
-            <div
-                class="absolute top-0 xl:left-24 left-28 bg-yellow-400 text-white py-1 px-2 rounded-bl-md rounded-br-md">
-                <p class="text-sm font-bold">PALING LARIS!</p>
+        @foreach ($road_race as $road_races)
+        <div class="border rounded-lg my-3 p-6 text-center shadow-xl" data-aos="fade-up">
+            <h3 class="text-5xl font-bold text-gray-600 mb-2">{{ $road_races->nama }} <span class="text-base">KM</span>
+            </h3>
+            <div class="text-2xl font-bold text-yellow-400 mb-2">Rp.
+                {{ $road_races->biaya}}
             </div>
-            <h3 class="text-5xl mt-3 font-bold text-gray-600 mb-2">10<span class="text-base">KM</span></h3>
-            <div class="text-2xl font-bold text-yellow-400 mb-2">Rp200.000</div>
-            <a href="{{ route('daftar') }}"
-                class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">Pilih
-                Paket</a>
+            <a href="{{ route('daftar', $road_races->id) }}"
+                class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
+                Pilih Paket
+            </a>
             <ul class="text-sm text-gray-400 space-y-2 mb-4 text-left">
                 <li>✔️ Jersey Running</li>
                 <li>✔️ Medali</li>
                 <li>✔️ BIB</li>
             </ul>
         </div>
-
-        <!-- Paket Business -->
-        <div class="border rounded-lg my-3 p-6 text-center shadow-xl" data-aos="fade-left">
-            <h3 class="text-5xl font-bold text-gray-600 mb-2">21<span class="text-base">KM</span></h3>
-            <div class="text-2xl font-bold text-yellow-400 mb-2">Rp350.000</div>
-            <a href="{{ route('daftar') }}"
-                class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">Pilih
-                Paket</a>
-            <ul class="text-sm text-gray-400 space-y-2 mb-4 text-left">
-                <li>✔️ Jersey Running</li>
-                <li>✔️ Medali</li>
-                <li>✔️ BIB</li>
-                <li>✔️ Jersey Finisher</li>
-            </ul>
-        </div>
+        @endforeach
     </div>
 </section>
 
@@ -79,20 +51,18 @@
     <h2 class="text-3xl font-bold text-yellow-400 mb-4" data-aos="fade-up">KATEGORI PELARI</h2>
     <div class="sm:mt-8 bg-cover bg-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-8 md:px-8 justify-items-center bg-none sm:bg-[url('/assets/img/road.png')]"
         data-aos="zoom-out">
-        @foreach ([
-        ['title' => 'Pelajar Pria/Wanita', 'age' => '15 - 17 Tahun'],
-        ['title' => 'Elit(Atlet) Pria/Wanita', 'age' => '17 - 34 Tahun'],
-        ['title' => 'Hobbies Pria/Wanita', 'age' => '18 - 34 Tahun'],
-        ['title' => 'Master A Pria/Wanita', 'age' => '35 - 44 Tahun'],
-        ['title' => 'Master B Pria/Wanita', 'age' => '45 - 50 Tahun'],
-        ['title' => 'Master C Pria/Wanita', 'age' => '50 Tahun +']
-        ] as $category)
+        @if($kategori->isEmpty())
+        <p class="text-gray-600 text-lg" data-aos="fade-up">Tidak ada kategori pelari</p>
+        @else
+        @foreach ($kategori as $ktgpeserta)
         <div class="bg-zinc-800 bg-opacity-95 p-6 rounded-lg shadow-md transition duration-300 text-center w-full sm:w-48"
             data-aos="fade-up">
-            <h3 class="text-md font-semibold text-white">{{ $category['title'] }}</h3>
-            <p class="mt-2 text-gray-300">{{ $category['age'] }}</p>
+            <h3 class="text-md font-semibold text-white">{{ $ktgpeserta->name }} {{ $ktgpeserta->gender }}
+            </h3>
+            <p class="mt-2 text-gray-300">{{ $ktgpeserta->umur }} Tahun</p>
         </div>
         @endforeach
+        @endif
     </div>
 </section>
 

@@ -17,7 +17,9 @@
                             <tr>
                                 <th class="py-2 px-4 border-b border-gray-300">Nama Lengkap</th>
                                 <th class="py-2 px-4 border-b border-gray-300">No Tlp</th>
-                                <th class="py-2 px-4 border-b border-gray-300">Ukuran Jersey</th>
+                                <th class="py-2 px-4 border-b border-gray-300">Paket</th>
+                                <th class="py-2 px-4 border-b border-gray-300">Kategori Usia</th>
+                                {{-- <th class="py-2 px-4 border-b border-gray-300">Ukuran Jersey</th> --}}
                                 <th class="py-2 px-4 border-b border-gray-300">Status</th>
                             </tr>
                         </thead>
@@ -33,7 +35,11 @@
                                     @endphp
                                     {{ $maskedPhone }}
                                 </td>
-                                <td class="py-2 px-4 border-b border-gray-300">{{ $peserta->size_jersey }}</td>
+                                <td class="py-2 px-4 border-b border-gray-300">{{ $peserta->roadRace->nama }} <small
+                                        class="text-gray-500">Km</small></td>
+                                <td class="py-2 px-4 border-b border-gray-300">{{ $peserta->kategori->name }}</td>
+                                {{-- <td class="py-2 px-4 border-b border-gray-300">{{ $peserta->size_jersey }}</td>
+                                --}}
                                 <td class="py-2 px-4 border-b border-gray-300">
                                     <a class="inline-block px-3 py-1 rounded-lg text-white {{ $peserta->status == 'terverifikasi' ? 'bg-green-500' : 'bg-red-500' }}"
                                         onclick="confirmStatusChange({{ $peserta->id }}, '{{ $peserta->status }}')">
