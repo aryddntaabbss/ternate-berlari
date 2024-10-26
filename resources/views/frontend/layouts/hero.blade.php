@@ -8,8 +8,8 @@
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-white mb-4">
                     Selamat datang di Website {{ $websiteTitle }}
                 </h1>
-                <p class="text-lg md:text-xl lg:text-2xl font-light text-white mb-6 lg:mb-8">
-                    Ternate Berlari adalah sebuah ajang lari yang menyatukan komunitas pecinta olahraga di Ternate,
+                <p class="text-lg font-semibold md:text-xl lg:text-2xl text-white mb-6 lg:mb-8">
+                    {{ $websiteTitle }} adalah sebuah ajang lari yang menyatukan komunitas pecinta olahraga di Ternate,
                     menawarkan
                     pengalaman lari di antara pemandangan indah serta budaya kaya khas Kepulauan Maluku Utara. Melalui
                     acara ini,
