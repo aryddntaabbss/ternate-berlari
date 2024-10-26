@@ -20,10 +20,10 @@
                             <!-- Judul di sebelah kiri -->
                             <h5 class="card-title">Data Peserta</h5>
 
-                            <!-- Tombol di sebelah kanan -->
+                            {{-- <!-- Tombol di sebelah kanan -->
                             <a href="" class="btn btn-outline-success">
                                 <i class="bi bi-file-earmark-excel-fill"></i> Export Excel
-                            </a>
+                            </a> --}}
                         </div>
 
                         <!-- Table with stripped rows -->
@@ -53,8 +53,8 @@
                                             <td>-</td>
                                         @endif
                                         <td>{{ $peserta->size_jersey }}</td>
-                                        <td><a class="btn btn-secondary" href="{{ asset($peserta->bukti_bayar) }}"
-                                                target="_blank">Lihat
+                                        <td><a class="btn btn-secondary"
+                                                href="{{ asset('storage/' . $peserta->bukti_bayar) }}" target="_blank">Lihat
                                                 Bukti</a></td>
                                         <td>
                                             <a href="javascript:void(0)"

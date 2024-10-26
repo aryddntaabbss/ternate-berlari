@@ -83,8 +83,16 @@ class BerandaController extends Controller
         ]);
 
         // Menangani unggahan file
-        $fileName = time() . '_' . $request->bukti_bayar->getClientOriginalName();
-        $request->bukti_bayar->move(public_path('uploads'), $fileName);
+        $file = $request->file('bukti_bayar');
+
+        // Simpan gambar_tentang baru di storage
+        $path = $file->store('bukti_bayar', 'public');
+        
+        // Simpan path gambar_tentang di database
+        // $tentang->gambar_tentang = $path;
+
+        // $fileName = time() . '_' . $request->bukti_bayar->getClientOriginalName();
+        // $request->bukti_bayar->move(public_path('uploads'), $fileName);
 
         // Buat peserta baru
         Peserta::create([
@@ -100,7 +108,7 @@ class BerandaController extends Controller
             'id_kategori' => $request->id_kategori,
             'id_road_race' => $request->id_road_race,
             'size_jersey' => $request->size_jersey,
-            'bukti_bayar' => $fileName,
+            'bukti_bayar' => $path,
         ]);
 
         notify()->success('Peserta berhasil didaftarkan.');
