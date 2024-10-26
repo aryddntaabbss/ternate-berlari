@@ -70,10 +70,11 @@ class PageController extends Controller
     // Method to handle the update request
     public function update(Request $request, $id)
     {
-        // Validasi input dari form
+        try {
+            // Validasi input dari form
         $request->validate([
             'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:pages,slug,' . $id,
+            'slug' => 'required|string|max:255',
             'content' => 'required|string',
             'status' => 'required|in:aktif,tidak',
             'menu_id' => 'required|integer',
@@ -94,6 +95,11 @@ class PageController extends Controller
 
         notify()->success('Halaman Berhasil Di Update');
         return redirect()->route('pages');
+        } catch (\Throwable $th) {
+            notify()->error($th->getMessage());
+            return redirect()->back();
+        }
+        
     }
 
     public function destroy($id)

@@ -161,11 +161,22 @@
                                         <i class="bi bi-pencil"></i>
                                     </button>
 
-                                    <!-- Tombol Delete -->
+
+                                    <!-- Tombol Hapus -->
+                                    <form action="{{ route('kategori.destroy', $kategori->id) }}" method="POST"
+                                        style="display:inline-block;" id="delete-form-{{ $kategori->id }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-danger ms-1 btn-sm"
+                                            onclick="confirmDelete({{ $kategori->id }})"><i
+                                                class="bi bi-trash"></i></button>
+                                    </form>
+                                    {{-- <!-- Tombol Delete -->
                                     <button class="btn btn-outline-danger m-1"
                                         onclick="confirmDelete({{ $kategori->id }})">
                                         <i class="bi bi-trash"></i>
                                     </button>
+                                    
 
                                     <!-- Form delete, disembunyikan -->
                                     <form id="delete-form-{{ $kategori->id }}"
@@ -173,7 +184,7 @@
                                         style="display: none;">
                                         @csrf
                                         @method('DELETE')
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach
@@ -185,6 +196,8 @@
 @endsection
 
 @section('js')
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const editButtons = document.querySelectorAll('.btn-edit');
@@ -207,11 +220,5 @@
                 });
             });
         });
-
-        function confirmDelete(id) {
-            if (confirm('Apakah Anda yakin ingin menghapus kategori ini?')) {
-                document.getElementById('delete-form-' + id).submit();
-            }
-        }
     </script>
 @endsection

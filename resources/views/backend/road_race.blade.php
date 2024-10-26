@@ -171,6 +171,16 @@
                                         <i class="bi bi-pencil"></i>
                                     </button>
 
+                                    <!-- Tombol Hapus -->
+                                    <form action="{{ route('road-race.destroy', $road_race->id) }}" method="POST"
+                                        style="display:inline-block;" id="delete-form-{{ $road_race->id }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-danger ms-1 btn-sm"
+                                            onclick="confirmDelete({{ $road_race->id }})"><i
+                                                class="bi bi-trash"></i></button>
+                                    </form>
+                                    {{--                                     
                                     <!-- Tombol Delete -->
                                     <button class="btn btn-outline-danger m-1"
                                         onclick="confirmDelete({{ $road_race->id }})">
@@ -183,7 +193,7 @@
                                         style="display: none;">
                                         @csrf
                                         @method('DELETE')
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach
@@ -195,6 +205,8 @@
 @endsection
 
 @section('js')
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function formatRupiah(angka, prefix) {
             let number_string = angka.replace(/[^0-9]/g, '');
@@ -241,21 +253,5 @@
                 this.value = formatRupiah(this.value);
             });
         });
-
-        function confirmDelete(id) {
-            // Menggunakan SweetAlert untuk konfirmasi
-            swal({
-                title: "Apakah Anda yakin?",
-                text: "Anda akan menghapus data ini!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Ya, hapus!",
-                cancelButtonText: "Batal",
-                closeOnConfirm: false
-            }, function() {
-                document.getElementById('delete-form-' + id).submit();
-            });
-        }
     </script>
 @endsection

@@ -49,18 +49,21 @@
                                     </a>
 
 
-                                    <!-- Tombol Delete -->
-                                    <button class="btn btn-outline-danger m-1" onclick="confirmDelete({{ $item->id }})">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
 
-                                    <!-- Form delete, disembunyikan -->
-                                    <form id="delete-form-{{ $item->id }}"
-                                        action="{{ route('pages.destroy', $item->id) }}" method="POST"
-                                        style="display: none;">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
+                                    @if ($item->slug != 'syarat-ketentuan')
+                                        <!-- Tombol Delete -->
+                                        <button class="btn btn-outline-danger m-1"
+                                            onclick="confirmDelete({{ $item->id }})">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                        <!-- Form delete, disembunyikan -->
+                                        <form id="delete-form-{{ $item->id }}"
+                                            action="{{ route('pages.destroy', $item->id) }}" method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

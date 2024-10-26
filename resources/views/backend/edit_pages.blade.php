@@ -23,12 +23,15 @@
                 <form method="POST" action="{{ route('pages.update', $page->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+
                     <!-- Nama Halaman -->
                     <div class="mb-4">
                         <label for="name" class="form-label">Nama Halaman</label>
                         <input type="text" name="name" id="name" value="{{ old('name', $page->name) }}"
-                            class="form-control" required placeholder="Masukkan nama halaman" oninput="generateSlug()">
+                            class="form-control" required placeholder="Masukkan nama halaman" oninput="generateSlug()"
+                            @if ($page->slug == 'syarat-ketentuan') readonly @endif>
                     </div>
+
 
                     <!-- Slug (Otomatis dari nama halaman) -->
                     <div class="mb-4">
