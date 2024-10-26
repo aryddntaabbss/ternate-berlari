@@ -3,7 +3,9 @@
 @section('body')
     @include('frontend.layouts.header')
     @include('frontend.layouts.hero')
-
+    @php
+        $tanggalEvent = \Carbon\Carbon::parse($settings['tanggal_event']);
+    @endphp
     <!-- Pricing Section -->
     <section id="pendaftaran" class="mx-auto pb-12 px-4 max-w-5xl">
         <h2 class="text-3xl font-bold text-yellow-400 text-center py-16" data-aos="fade-up">PENDAFTARAN</h2>
@@ -19,10 +21,12 @@
                                     class="text-base">KM</span>
                             </h3>
                             <div class="text-2xl font-bold text-yellow-400 mb-2">Rp. {{ $road_races->biaya }}</div>
-                            <a href="{{ route('daftar', $road_races->id) }}"
-                                class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
-                                Pilih Paket
-                            </a>
+                            @if (!$tanggalEvent->isPast())
+                                <a href="{{ route('daftar', $road_races->id) }}"
+                                    class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
+                                    Pilih Paket
+                                </a>
+                            @endif
                             <ul class="text-sm text-gray-400 space-y-2 mb-4 text-left">
                                 <li>✔️ Jersey Running</li>
                                 <li>✔️ Medali</li>
@@ -40,10 +44,12 @@
                                 class="text-base">KM</span>
                         </h3>
                         <div class="text-2xl font-bold text-yellow-400 mb-2">Rp. {{ $road_races->biaya }}</div>
-                        <a href="{{ route('daftar', $road_races->id) }}"
-                            class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
-                            Pilih Paket
-                        </a>
+                        @if (!$tanggalEvent->isPast())
+                            <a href="{{ route('daftar', $road_races->id) }}"
+                                class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
+                                Pilih Paket
+                            </a>
+                        @endif
                         <ul class="text-sm text-gray-400 space-y-2 mb-4 text-left">
                             <li>✔️ Jersey Running</li>
                             <li>✔️ Medali</li>

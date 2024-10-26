@@ -18,7 +18,7 @@
             <!-- Waktu Hitung Mundur -->
             <div class="mb-6">
                 <div id="countdown"
-                    class="text-xl md:text-2xl flex justify-center lg:justify-center gap-2 font-semibold text-yellow-400">
+                    class="text-xl md:text-2xl flex justify-center lg:justify-center gap-2 font-semibold text-yellow-400 font-shadow-xl">
                     <div class="block w-16 md:w-20 bg-white p-2 rounded text-center shadow-lg">
                         <span id="days">00</span>
                         <div class="text-xs md:text-sm text-yellow-400 mt-2 font-bold">Hari</div>
@@ -36,12 +36,17 @@
                         <div class="text-xs md:text-sm text-yellow-400 mt-2 font-bold">Detik</div>
                     </div>
                 </div>
-                <div class="mt-6 lg:mt-9 justify-self-center">
-                    <a href="#pendaftaran"
-                        class="block w-full lg:w-52 px-3 py-2 text-center text-xl font-bold bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 shadow-xl">
-                        Daftar Sekarang
-                    </a>
-                </div>
+                @php
+                    $tanggalEvent = \Carbon\Carbon::parse($settings['tanggal_event']);
+                @endphp
+                @if (!$tanggalEvent->isPast())
+                    <div class="mt-6 lg:mt-9 justify-self-center">
+                        <a href="#pendaftaran"
+                            class="block w-full lg:w-52 px-3 py-2 text-center text-xl font-bold bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 shadow-xl">
+                            Daftar Sekarang
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
 
@@ -82,7 +87,7 @@
         // Jika hitungan mundur selesai
         if (distance < 0) {
             clearInterval(countdownTimer);
-            document.getElementById("countdown").innerHTML = "Event Sedang Berlangsung!";
+            document.getElementById("countdown").innerHTML = "";
         }
     }, 1000);
 </script>

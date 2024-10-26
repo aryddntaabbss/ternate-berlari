@@ -2,7 +2,9 @@
 
 @section('body')
     @include('frontend.layouts.header')
-
+    @php
+        $tanggalEvent = \Carbon\Carbon::parse($settings['tanggal_event']);
+    @endphp
     <!-- Section untuk Data Peserta -->
     <section class="mt-4 px-5">
         <div class="w-full max-w-7xl mx-auto">
@@ -46,13 +48,18 @@
 
                 <!-- Form Pendaftaran -->
                 <div class="w-full bg-white p-6 shadow-xl rounded-lg" data-aos="fade-up" data-aos-duration="1500">
-                    <form action="{{ route('peserta.store') }}" method="POST" enctype="multipart/form-data"
+
+                    <form
+                        @if (!$tanggalEvent->isPast()) action="{{ route('peserta.store') }}" method="POST" enctype="multipart/form-data" @endif
                         class="grid grid-cols-1 gap-4 md:grid-cols-2">
                         @csrf
 
+
+
                         <!-- Nama Lengkap -->
                         <div class="col-span-1">
-                            <label for="nama_lengkap" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                            <label for="nama_lengkap" class="block text-sm font-medium text-gray-700">Nama
+                                Lengkap</label>
                             <input type="text" name="nama_lengkap" id="nama_lengkap" required
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                         </div>
@@ -135,7 +142,8 @@
                                     <option value="">-- Pilih Kategori Usia --</option>
                                     @foreach ($kategori as $ku)
                                         @if ($ku->id != 1)
-                                            <option value="{{ $ku->id }}">{{ $ku->name }} ({{ $ku->umur }})
+                                            <option value="{{ $ku->id }}">{{ $ku->name }}
+                                                ({{ $ku->umur }})
                                             </option>
                                         @endif
                                     @endforeach
@@ -145,7 +153,8 @@
 
                         <!-- Size Jersey -->
                         <div class="col-span-1">
-                            <label for="size_jersey" class="block text-sm font-medium text-gray-700">Size Jersey</label>
+                            <label for="size_jersey" class="block text-sm font-medium text-gray-700">Size
+                                Jersey</label>
                             <select name="size_jersey" id="size_jersey" required
                                 class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                 <option value="">-- Pilih Size Jersey --</option>
@@ -175,14 +184,25 @@
                             </label>
                         </div>
 
-                        <!-- Tombol Submit -->
+                        {{-- <!-- Tombol Submit -->
                         <div class="col-span-1 md:col-span-2 flex justify-center">
                             <button type="submit" id="submit_button"
                                 class="w-full py-2 px-4 bg-indigo-500 text-white font-semibold rounded-md shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
                                 disabled>
                                 Daftar
                             </button>
-                        </div>
+                        </div> --}}
+
+
+                        @if (!$tanggalEvent->isPast())
+                            <!-- Tombol Submit -->
+                            <div class="col-span-1 md:col-span-2 flex justify-center">
+                                <button type="submit" id="submit_button"
+                                    class="w-full py-2 px-4 bg-indigo-500 text-white font-semibold rounded-md shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed">
+                                    Daftar
+                                </button>
+                            </div>
+                        @endif
                     </form>
                 </div>
             </div>
