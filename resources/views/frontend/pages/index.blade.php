@@ -9,12 +9,32 @@
     <h2 class="text-3xl font-bold text-yellow-400 text-center py-16" data-aos="fade-up">PENDAFTARAN</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @foreach ($road_race as $road_races)
-        <div class="border rounded-lg my-3 p-6 text-center shadow-xl" data-aos="fade-up">
+        @if ($road_races->paling_laris == 1)
+        <!-- Card dengan Border Kuning -->
+        <div class="border-2 border-yellow-400 rounded-lg text-center shadow-xl" data-aos="fade-up">
+            <h3 class="text-md w-36 rounded-b-md lg:ml-20 ml-28  font-bold bg-yellow-400 text-white">PALING LARIS</h3>
+            <div class="p-6">
+                <h3 class="text-5xl font-bold text-gray-600 mb-2">{{ $road_races->nama }} <span
+                        class="text-base">KM</span>
+                </h3>
+                <div class="text-2xl font-bold text-yellow-400 mb-2">Rp. {{ $road_races->biaya }}</div>
+                <a href="{{ route('daftar', $road_races->id) }}"
+                    class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
+                    Pilih Paket
+                </a>
+                <ul class="text-sm text-gray-400 space-y-2 mb-4 text-left">
+                    <li>✔️ Jersey Running</li>
+                    <li>✔️ Medali</li>
+                    <li>✔️ BIB</li>
+                </ul>
+            </div>
+        </div>
+        @else
+        <!-- Card tanpa Border -->
+        <div class="rounded-lg my-6 p-6 text-center shadow-xl" data-aos="fade-up">
             <h3 class="text-5xl font-bold text-gray-600 mb-2">{{ $road_races->nama }} <span class="text-base">KM</span>
             </h3>
-            <div class="text-2xl font-bold text-yellow-400 mb-2">Rp.
-                {{ $road_races->biaya}}
-            </div>
+            <div class="text-2xl font-bold text-yellow-400 mb-2">Rp. {{ $road_races->biaya }}</div>
             <a href="{{ route('daftar', $road_races->id) }}"
                 class="block py-2 px-4 mt-9 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 mb-4">
                 Pilih Paket
@@ -25,6 +45,7 @@
                 <li>✔️ BIB</li>
             </ul>
         </div>
+        @endif
         @endforeach
     </div>
 </section>
