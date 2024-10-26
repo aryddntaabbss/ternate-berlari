@@ -9,9 +9,13 @@
                     Selamat datang di Website {{ $websiteTitle }}
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl font-light text-white mb-6 lg:mb-8">
-                    From checkout to global sales tax compliance, companies around the world use Flowbite to simplify
-                    their
-                    payment stack.
+                    Ternate Berlari adalah sebuah ajang lari yang menyatukan komunitas pecinta olahraga di Ternate,
+                    menawarkan
+                    pengalaman lari di antara pemandangan indah serta budaya kaya khas Kepulauan Maluku Utara. Melalui
+                    acara ini,
+                    kami berkomitmen menginspirasi gaya hidup sehat, mempererat kebersamaan, dan mempromosikan keindahan
+                    alam
+                    Ternate kepada masyarakat luas.
                 </p>
             </div>
 
