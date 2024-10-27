@@ -22,8 +22,14 @@ Route::get('/dashboard', function () {
     ->groupBy('road_race.nama')
     ->get();
 
+    $data2 = DB::table('peserta')
+    ->join('kategori', 'peserta.id_kategori', '=', 'kategori.id')
+    ->select('kategori.name as name_kategori', DB::raw('COUNT(peserta.id) as total'))
+    ->where('kategori.id', '!=', 1) // Filter untuk menghilangkan id_kategori = 1
+    ->groupBy('kategori.name')
+    ->get();
         // dd($data);
-    return view('backend.dashboard', compact('data'));
+    return view('backend.dashboard', compact('data','data2'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
