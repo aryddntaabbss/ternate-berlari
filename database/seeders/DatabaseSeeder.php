@@ -85,11 +85,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('deskripsi_website')->insert([
-            'url' => 'http://localhost/',
-            'logo' => 'Ternate Berlari',
+            'url' => 'https://ternate-berlari.com/',
+            'logo' => 'uploads/logo/qUIXXAuurXHnx0mb5k7uynDOXTcAsT91m2lvhaRm.png',
             'title' => 'Ternate Berlari',
-            'keyword' => 'website,laravel,local',
-            'deskripsi' => 'This is the description for my website.',
+            'keyword' => 'pesona ternate, ternate berlari',
+            'deskripsi' => 'Ternate Berlari adalah sebuah ajang lari yang menyatukan komunitas pecinta olahraga di Ternate, menawarkan pengalaman lari di antara pemandangan indah serta budaya kaya khas Kepulauan Maluku Utara. Melalui acara ini, kami berkomitmen menginspirasi gaya hidup sehat, mempererat kebersamaan, dan mempromosikan keindahan alam Ternate kepada masyarakat luas.',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -102,15 +102,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('rekening')->insert([
-            'nama_bank' => 'Bank Central Asia (BCA)',
-            'no_rekening' => '1234567890',
-            'nama_rekening' => 'John Doe',
+            'nama_bank' => 'BNI',
+            'no_rekening' => '1817092410',
+            'nama_rekening' => 'Ternate Sport Tourism',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('tentang')->insert([
-            'deskripsi_tentang' => 'Isi Tentang Website Ini',
-            'gambar_tentang' => 'gambar',
+            'deskripsi_tentang' => 'Ternate Berlari adalah sebuah ajang lari yang menyatukan komunitas pecinta olahraga di Ternate, menawarkan pengalaman lari di antara pemandangan indah serta budaya kaya khas Kepulauan Maluku Utara. Melalui acara ini, kami berkomitmen menginspirasi gaya hidup sehat, mempererat kebersamaan, dan mempromosikan keindahan alam Ternate kepada masyarakat luas.',
+            'gambar_tentang' => 'gambar_tentang/Cxa5okWzDdBghZ25F6hVOr6eOJqEViXT5qgtkwxn.png',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -120,15 +120,36 @@ class DatabaseSeeder extends Seeder
             'umur' => 'Tidak Ada',
             'gender' => 'Tidak Ada',
         ]);
+
         Kategori::create([
             'name' => 'Pelajar',
-            'umur' => '30 - 20',
+            'umur' => '15 - 17',
             'gender' => 'Pria/Wanita',
         ]);
 
         Kategori::create([
-            'name' => 'Mahasiswa',
-            'umur' => '30 - 20',
+            'name' => 'Elit (Atlet)',
+            'umur' => '17 - 34',
+            'gender' => 'Pria/Wanita',
+        ]);
+        Kategori::create([
+            'name' => 'HOBBIES',
+            'umur' => '18 - 34',
+            'gender' => 'Pria/Wanita',
+        ]);
+        Kategori::create([
+            'name' => 'MASTER A',
+            'umur' => '35 - 44',
+            'gender' => 'Pria/Wanita',
+        ]);
+        Kategori::create([
+            'name' => 'MASTER B',
+            'umur' => '45 - 50',
+            'gender' => 'Pria/Wanita',
+        ]);
+        Kategori::create([
+            'name' => 'MASTER C',
+            'umur' => '50+',
             'gender' => 'Pria/Wanita',
         ]);
 
@@ -140,7 +161,27 @@ class DatabaseSeeder extends Seeder
 
         Page::create([
             'name' => 'Syarat & Ketentuan',
-            'content' => '<div><strong>Syarat dan Ketentuan Ternate Berlari<br></strong><br></div><div><strong>1. Pendaftaran Peserta</strong></div><div>Pendaftaran hanya dapat dilakukan secara online melalui situs resmi <strong>Ternate Berlari</strong>.</div><div>Peserta diwajibkan mengisi data diri dengan benar dan lengkap.</div><div>Biaya pendaftaran yang telah dibayarkan <strong>tidak dapat dikembalikan</strong> dalam kondisi apapun.</div><div>Peserta harus berusia minimal <strong>15 tahun</strong> pada hari perlombaan, kecuali kategori khusus yang diatur oleh panitia.</div><div><br></div><div><strong>2. Kriteria Peserta</strong></div><div>Peserta wajib dalam kondisi <strong>sehat jasmani dan rohani</strong>. Jika diperlukan, panitia berhak meminta surat keterangan sehat dari dokter.</div><div>Peserta yang memiliki riwayat kesehatan tertentu (seperti jantung atau asma) <strong>wajib</strong> berkonsultasi dengan dokter terlebih dahulu.</div><div>Peserta dilarang menggunakan <strong>narkoba</strong> atau <strong>doping</strong> selama acara berlangsung.</div><div><br></div><div><strong>3. Kategori Lomba dan Jarak Tempuh</strong></div><div>Lomba akan dibagi dalam beberapa kategori berdasarkan jarak tempuh:</div><div><strong>5K</strong> – Kategori Fun Run</div><div><strong>10K</strong> – Kategori Umum</div><div><strong>21K</strong> – Half Marathon</div><div>Peserta harus memilih kategori lomba saat pendaftaran dan tidak bisa mengganti kategori setelah pendaftaran selesai.</div><div><br></div><div><strong>4. Perlengkapan dan Nomor Dada</strong></div><div>Setiap peserta wajib menggunakan <strong>nomor dada</strong> yang telah disediakan oleh panitia.</div><div>Peserta tidak diperbolehkan mengganti atau memodifikasi nomor dada.</div><div>Peserta harus mengenakan pakaian dan sepatu olahraga yang sesuai dan aman untuk berlari.</div><div><br></div><div><strong>5. Peraturan Selama Lomba</strong></div><div>Peserta wajib mematuhi <strong>rute lomba</strong> yang telah ditentukan oleh panitia.</div><div>Dilarang menggunakan kendaraan atau alat bantu selama lomba berlangsung.</div><div>Jika ditemukan peserta melakukan <strong>kecurangan</strong>, seperti memotong rute, peserta akan didiskualifikasi.</div><div>Peserta yang tidak mampu menyelesaikan lomba di waktu yang telah ditentukan <strong>akan dinyatakan gagal</strong>.</div><div><br></div><div><strong>6. Keamanan dan Pertolongan Medis</strong></div><div>Tim medis dan petugas keamanan akan disiagakan di sepanjang rute dan garis finish.</div><div>Jika peserta mengalami kondisi darurat, diharapkan segera mencari bantuan ke pos medis terdekat.</div><div>Panitia tidak bertanggung jawab atas cedera atau kecelakaan yang terjadi akibat kelalaian peserta.</div><div><br></div><div><strong>7. Hadiah dan Penghargaan</strong></div><div>Hadiah dan penghargaan akan diberikan kepada <strong>juara 1, 2, dan 3</strong> di setiap kategori.</div><div>Pajak hadiah ditanggung oleh <strong>pemenang</strong> sesuai dengan ketentuan peraturan pajak yang berlaku.</div><div>Panitia berhak membatalkan kemenangan jika ditemukan kecurangan atau pelanggaran.</div><div><br></div><div><strong>8. Perubahan dan Pembatalan Acara</strong></div><div>Panitia berhak melakukan <strong>perubahan rute</strong> atau <strong>jadwal lomba</strong> jika terdapat keadaan darurat atau cuaca buruk.</div><div>Jika acara terpaksa dibatalkan karena alasan di luar kendali panitia, biaya pendaftaran tidak dapat dikembalikan.</div><div><br></div><div><strong>9. Hak Cipta dan Dokumentasi</strong></div><div>Peserta memberikan izin kepada panitia untuk menggunakan foto atau video dokumentasi acara untuk kepentingan promosi tanpa kompensasi tambahan.</div><div>Peserta dilarang menggunakan logo dan materi promosi <strong>Ternate Berlari</strong> tanpa izin tertulis dari panitia.</div><div><br></div><div><strong>10. Persetujuan Peserta</strong></div><div>Dengan mengikuti acara <strong>Ternate Berlari</strong>, peserta dianggap telah membaca, memahami, dan menyetujui semua syarat dan ketentuan yang berlaku.</div><div>Keputusan panitia bersifat <strong>mutlak</strong> dan tidak dapat diganggu gugat.</div><div><br></div><div>Dokumen ini memastikan bahwa semua peserta memahami dan mematuhi aturan serta memberikan perlindungan kepada panitia dan peserta. Anda dapat menyesuaikan isi ini jika diperlukan agar sesuai dengan kebijakan khusus acara <strong>Ternate Berlari</strong>.</div>',
+            'content' => '<div><strong>Peraturan dan Ketentuan Ternate Berlari 2024</strong><br>
+<br>#Semua Peserta diwajibkan Membaca dan Memahami Peraturan dan Ketentuan sebelum Mendaftar Untuk Event Ternate Berlari.<br>
+<br>1. Peserta Ternate Berlari adalah mereka yang mendaftar Resmi&nbsp; secara Online (Google Form) maupun secara Offline sebagai Peserta Ternate Berlari 2024.
+<br>
+<br>2. Peserta Ternate Berlari 2024 Kategori Atlet wajib mendaftarkan diri di kategori Elite Atlet, apabila ketahuan mendaftar di kategori Umum (Hobies) akan di diskualifikasi.
+<br>
+<br>3. Event Ternate Berlari sifatnya Lifestyle, tidak terikat dengan peraturan Resmi PB PASI. Segala Peraturan dan Ketentuan ditetapkan oleh penyelenggara Event.
+<br>
+<br>4. Event Ternate Berlari dibagi 3 Kategori, 5K Fun Run, 10K Race dan 21K Fun (Upgrade KM) bagi peserta yang ingin HM.
+<br>
+<br>5. Kategori 10K Race, Penyelenggara akan menggunakan Juri/wasit yang berlisensi dari PASI.
+<br>
+<br>6. Kategori Pelajar yang berumur dibawah 15 Tahun tidak diperkenankan mengikuti/mendaftar 10K Race tetapi penyelenggara mengarahkan kategori 5K Fun Run.
+<br>
+<br>7. Hadiah Podium/Pemenang pada kategori masing-masing berupa uang tunai yang nominalnya telah ditentukan oleh penyelenggara.
+<br>
+<br>8. Peserta Ternate Berlari 2024 tidak memiliki riwayat penyakit yang membahayakan dan memastikan dirinya dalam kondisi sehat sebelum mendaftar dan saat pelaksanaan Event.
+<br>
+<br>9. Penyelenggara Event Ternate Berlari dapat mengubah peraturan dan ketentuan sesuai dengan kebijakan sendiri tanpa pemberitahuan sebelumnya.
+<br>
+<br>10. Hal-hal yang belum tercantum dalam peraturan dan ketentuan ini akan disampaikan kemudian oleh penyelenggara event.</div>',
             'slug' => 'syarat-ketentuan',
             'menu_id' => 1, // Sesuaikan ID menu (2 = About)
             'status' => 'aktif',
