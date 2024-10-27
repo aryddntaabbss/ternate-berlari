@@ -64,7 +64,7 @@
                     <!-- Pie Chart -->
                     <div id="chat-2"></div>
 
-                    {{-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> --}}
+                    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
                     <script>
                         document.addEventListener("DOMContentLoaded", () => {
                             const data = @json($data2); // Data dari controller
