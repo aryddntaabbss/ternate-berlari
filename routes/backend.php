@@ -11,12 +11,21 @@ use App\Http\Controllers\RoadRaceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SosialMediaController;
 use App\Http\Controllers\TentangController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $data = DB::table('peserta')
+    ->join('road_race', 'peserta.id_road_race', '=', 'road_race.id')
+    ->select('road_race.nama as nama_road_race', DB::raw('COUNT(peserta.id) as total'))
+    ->groupBy('road_race.nama')
+    ->get();
+
+        // dd($data);
+    return view('backend.dashboard', compact('data'));
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -176,6 +176,15 @@
 
                         <!-- Checkbox untuk Syarat dan Ketentuan -->
                         <div class="col-span-1 md:col-span-2 flex items-center">
+                            <input type="checkbox" name="chek_sehat" id="chek_sehat" class="mr-2">
+                            <label for="chek_sehat" class="text-sm text-gray-700">
+                                Saya menyetujui dan secara langsung menyatakan sehat jasmani dan
+                                rohani.
+                            </label>
+                        </div>
+
+                        <!-- Checkbox untuk Syarat dan Ketentuan -->
+                        <div class="col-span-1 md:col-span-2 flex items-center">
                             <input type="checkbox" name="syarat_ketentuan" id="syarat_ketentuan" class="mr-2">
                             <label for="syarat_ketentuan" class="text-sm text-gray-700">Saya menyetujui
                                 <a href="{{ url('/Menu/syarat-ketentuan') }}" class="text-indigo-500 hover:underline"
@@ -183,6 +192,7 @@
                                     dan Ketentuan</a>
                             </label>
                         </div>
+
 
                         {{-- <!-- Tombol Submit -->
                         <div class="col-span-1 md:col-span-2 flex justify-center">
@@ -213,15 +223,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            const checkbox = $('#syarat_ketentuan');
+            const syaratKetentuan = $('#syarat_ketentuan');
+            const cekSehat = $('#chek_sehat');
             const submitButton = $('#submit_button');
 
-            // Set initial disabled state based on checkbox status
-            submitButton.prop('disabled', !checkbox.is(':checked'));
+            // Set initial disabled state based on both checkbox statuses
+            submitButton.prop('disabled', !(syaratKetentuan.is(':checked') && cekSehat.is(':checked')));
 
             // Event listener for checkbox changes
-            checkbox.on('change', function() {
-                submitButton.prop('disabled', !checkbox.is(':checked'));
+            syaratKetentuan.on('change', function() {
+                submitButton.prop('disabled', !(syaratKetentuan.is(':checked') && cekSehat.is(':checked')));
+            });
+
+            cekSehat.on('change', function() {
+                submitButton.prop('disabled', !(syaratKetentuan.is(':checked') && cekSehat.is(':checked')));
             });
         });
     </script>

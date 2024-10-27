@@ -139,27 +139,29 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->url }}</td>
                                 <td>
-                                    <!-- Tombol Edit: Menampilkan modal edit dan mengisi data -->
-                                    <button type="button" class="btn btn-outline-warning btn-edit"
-                                        data-id="{{ $item->id }}" data-nama="{{ $item->name }}"
-                                        data-url="{{ $item->url }}" data-bs-toggle="modal"
-                                        data-bs-target="#editDosenModal">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
+                                    @if ($item->id != 1)
+                                        <!-- Tombol Edit: Menampilkan modal edit dan mengisi data -->
+                                        <button type="button" class="btn btn-outline-warning btn-edit"
+                                            data-id="{{ $item->id }}" data-nama="{{ $item->name }}"
+                                            data-url="{{ $item->url }}" data-bs-toggle="modal"
+                                            data-bs-target="#editDosenModal">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
 
-                                    <!-- Tombol Delete -->
-                                    <button class="btn btn-outline-danger m-1"
-                                        onclick="confirmDelete({{ $item->id }})">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
+                                        <!-- Tombol Delete -->
+                                        <button class="btn btn-outline-danger m-1"
+                                            onclick="confirmDelete({{ $item->id }})">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
 
-                                    <!-- Form delete, disembunyikan -->
-                                    <form id="delete-form-{{ $item->id }}"
-                                        action="{{ route('menu.destroy', $item->id) }}" method="POST"
-                                        style="display: none;">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
+                                        <!-- Form delete, disembunyikan -->
+                                        <form id="delete-form-{{ $item->id }}"
+                                            action="{{ route('menu.destroy', $item->id) }}" method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
