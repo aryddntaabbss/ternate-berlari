@@ -65,53 +65,55 @@ class BerandaController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi data permintaan yang masuk
-        $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
-            'nik' => 'required|string|max:16', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-            'golongan_darah' => 'required|string|max:3',
-            'pekerjaan' => 'required|string|max:255',
-            'no_tlp' => 'required|string|max:15|min:11', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-            'alamat' => 'required|string|max:255',
-            'komunitas' => 'required|string|max:255',
-            'riwayat_penyakit' => 'required|string|max:255',
-            'kontak_darurat' => 'required|string|max:15', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-            'id_kategori' => 'required',
-            'id_road_race' => 'required',
-            'size_jersey' => 'required|string',
-            'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-        ]);
+     
+            // Validasi data permintaan yang masuk
+            $request->validate([
+                'nama_lengkap' => 'required|string|max:255',
+                'nik' => 'required|string|size:16|unique:peserta', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
+                'golongan_darah' => 'required|string|max:3',
+                'pekerjaan' => 'required|string|max:255',
+                'no_tlp' => 'required|string|max:15|min:11', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
+                'alamat' => 'required|string|max:255',
+                'komunitas' => 'required|string|max:255',
+                'riwayat_penyakit' => 'required|string|max:255',
+                'kontak_darurat' => 'required|string|max:15', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
+                'id_kategori' => 'required',
+                'id_road_race' => 'required',
+                'size_jersey' => 'required|string',
+                'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
+            ]);
 
-        // Menangani unggahan file
-        $file = $request->file('bukti_bayar');
+            // Menangani unggahan file
+            $file = $request->file('bukti_bayar');
 
-        // Simpan gambar_tentang baru di storage
-        $path = $file->store('bukti_bayar', 'public');
+            // Simpan gambar_tentang baru di storage
+            $path = $file->store('bukti_bayar', 'public');
+            
+            // Simpan path gambar_tentang di database
+            // $tentang->gambar_tentang = $path;
+
+            // $fileName = time() . '_' . $request->bukti_bayar->getClientOriginalName();
+            // $request->bukti_bayar->move(public_path('uploads'), $fileName);
+
+            // Buat peserta baru
+            Peserta::create([
+                'nama_lengkap' => $request->nama_lengkap,
+                'nik' => $request->nik,
+                'golongan_darah' => $request->golongan_darah,
+                'pekerjaan' => $request->pekerjaan,
+                'no_tlp' => $request->no_tlp,
+                'alamat' => $request->alamat,
+                'komunitas' => $request->komunitas,
+                'riwayat_penyakit' => $request->riwayat_penyakit,
+                'kontak_darurat' => $request->kontak_darurat,
+                'id_kategori' => $request->id_kategori,
+                'id_road_race' => $request->id_road_race,
+                'size_jersey' => $request->size_jersey,
+                'bukti_bayar' => $path,
+            ]);
+
+            notify()->success('Peserta berhasil didaftarkan.');
+            return redirect('/data-peserta');
         
-        // Simpan path gambar_tentang di database
-        // $tentang->gambar_tentang = $path;
-
-        // $fileName = time() . '_' . $request->bukti_bayar->getClientOriginalName();
-        // $request->bukti_bayar->move(public_path('uploads'), $fileName);
-
-        // Buat peserta baru
-        Peserta::create([
-            'nama_lengkap' => $request->nama_lengkap,
-            'nik' => $request->nik,
-            'golongan_darah' => $request->golongan_darah,
-            'pekerjaan' => $request->pekerjaan,
-            'no_tlp' => $request->no_tlp,
-            'alamat' => $request->alamat,
-            'komunitas' => $request->komunitas,
-            'riwayat_penyakit' => $request->riwayat_penyakit,
-            'kontak_darurat' => $request->kontak_darurat,
-            'id_kategori' => $request->id_kategori,
-            'id_road_race' => $request->id_road_race,
-            'size_jersey' => $request->size_jersey,
-            'bukti_bayar' => $path,
-        ]);
-
-        notify()->success('Peserta berhasil didaftarkan.');
-        return redirect('/data-peserta');
     }
 }

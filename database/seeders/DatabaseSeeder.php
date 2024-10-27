@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make('T3rnateRunn1ng@2024'),
         ]);
 
         Setting::create([
@@ -36,19 +36,19 @@ class DatabaseSeeder extends Seeder
         ]);
         Setting::create([
             'name' => 'tanggal_event',
-            'value' => '2024-10-25',
+            'value' => '2024-12-08',
         ]);
         RoadRace::create([
             'nama' => '5',
-            'biaya' => '175',
+            'biaya' => '175.000',
         ]);
         RoadRace::create([
             'nama' => '10',
-            'biaya' => '200',
+            'biaya' => '200.000',
         ]);
         RoadRace::create([
             'nama' => '21',
-            'biaya' => '350',
+            'biaya' => '350.000',
         ]);
 
         Peserta::create([

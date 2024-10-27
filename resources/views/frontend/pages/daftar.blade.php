@@ -54,49 +54,76 @@
                         class="grid grid-cols-1 gap-4 md:grid-cols-2">
                         @csrf
 
-
-
                         <!-- Nama Lengkap -->
                         <div class="col-span-1">
-                            <label for="nama_lengkap" class="block text-sm font-medium text-gray-700">Nama
-                                Lengkap</label>
+                            <label for="nama_lengkap" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
                             <input type="text" name="nama_lengkap" id="nama_lengkap" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('nama_lengkap') border-red-500 @enderror"
+                                value="{{ old('nama_lengkap') }}">
+                            @error('nama_lengkap')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- NIK -->
                         <div class="col-span-1">
                             <label for="nik" class="block text-sm font-medium text-gray-700">NIK</label>
-                            <input type="text" name="nik" id="nik" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                            <input type="number" name="nik" id="nik" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('nik') border-red-500 @enderror"
+                                value="{{ old('nik') }}">
+                            @error('nik')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Pekerjaan -->
                         <div class="col-span-1">
                             <label for="pekerjaan" class="block text-sm font-medium text-gray-700">Pekerjaan</label>
                             <input type="text" name="pekerjaan" id="pekerjaan" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('pekerjaan') border-red-500 @enderror"
+                                value="{{ old('pekerjaan') }}">
+                            @error('pekerjaan')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Nomor Telepon -->
                         <div class="col-span-1">
                             <label for="no_tlp" class="block text-sm font-medium text-gray-700">Nomor Telepon</label>
-                            <input type="text" name="no_tlp" id="no_tlp" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                            <input type="number" name="no_tlp" id="no_tlp" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('no_tlp') border-red-500 @enderror"
+                                value="{{ old('no_tlp') }}">
+                            @error('no_tlp')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Alamat -->
                         <div class="col-span-1">
                             <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
                             <input type="text" name="alamat" id="alamat" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('alamat') border-red-500 @enderror"
+                                value="{{ old('alamat') }}">
+                            @error('alamat')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Komunitas -->
                         <div class="col-span-1">
                             <label for="komunitas" class="block text-sm font-medium text-gray-700">Komunitas</label>
                             <input type="text" name="komunitas" id="komunitas" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('komunitas') border-red-500 @enderror"
+                                value="{{ old('komunitas') }}">
+                            @error('komunitas')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Riwayat Penyakit -->
@@ -104,7 +131,12 @@
                             <label for="riwayat_penyakit" class="block text-sm font-medium text-gray-700">Riwayat
                                 Penyakit</label>
                             <input type="text" name="riwayat_penyakit" id="riwayat_penyakit" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('riwayat_penyakit') border-red-500 @enderror"
+                                value="{{ old('riwayat_penyakit') }}">
+                            @error('riwayat_penyakit')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Kontak Darurat -->
@@ -112,7 +144,12 @@
                             <label for="kontak_darurat" class="block text-sm font-medium text-gray-700">Kontak
                                 Darurat</label>
                             <input type="text" name="kontak_darurat" id="kontak_darurat" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('kontak_darurat') border-red-500 @enderror"
+                                value="{{ old('kontak_darurat') }}">
+                            @error('kontak_darurat')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Golongan Darah -->
@@ -120,13 +157,17 @@
                             <label for="golongan_darah" class="block text-sm font-medium text-gray-700">Golongan
                                 Darah</label>
                             <select name="golongan_darah" id="golongan_darah" required
-                                class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
+        @error('golongan_darah') border-red-500 @enderror">
                                 <option value="">-- Pilih Golongan Darah --</option>
-                                <option value="a">A</option>
-                                <option value="b">B</option>
-                                <option value="ab">AB</option>
-                                <option value="o">O</option>
+                                <option value="a" {{ old('golongan_darah') == 'a' ? 'selected' : '' }}>A</option>
+                                <option value="b" {{ old('golongan_darah') == 'b' ? 'selected' : '' }}>B</option>
+                                <option value="ab" {{ old('golongan_darah') == 'ab' ? 'selected' : '' }}>AB</option>
+                                <option value="o" {{ old('golongan_darah') == 'o' ? 'selected' : '' }}>O</option>
                             </select>
+                            @error('golongan_darah')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <input type="hidden" name="id_road_race" id="" value="{{ $road_race->id }}">
@@ -138,33 +179,42 @@
                                 <label for="kategori_usia" class="block text-sm font-medium text-gray-700">Kategori
                                     Usia</label>
                                 <select name="id_kategori" id="kategori_usia" required
-                                    class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                    class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500
+                                    @error('id_kategori') border-red-500 @enderror">
                                     <option value="">-- Pilih Kategori Usia --</option>
                                     @foreach ($kategori as $ku)
                                         @if ($ku->id != 1)
-                                            <option value="{{ $ku->id }}">{{ $ku->name }}
-                                                ({{ $ku->umur }})
+                                            <option value="{{ $ku->id }}"
+                                                {{ old('id_kategori') == $ku->id ? 'selected' : '' }}>
+                                                {{ $ku->name }} ({{ $ku->umur }})
                                             </option>
                                         @endif
                                     @endforeach
                                 </select>
+                                @error('id_kategori')
+                                    <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
                         @endif
 
                         <!-- Size Jersey -->
                         <div class="col-span-1">
-                            <label for="size_jersey" class="block text-sm font-medium text-gray-700">Size
-                                Jersey</label>
+                            <label for="size_jersey" class="block text-sm font-medium text-gray-700">Size Jersey</label>
                             <select name="size_jersey" id="size_jersey" required
-                                class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500
+        @error('size_jersey') border-red-500 @enderror">
                                 <option value="">-- Pilih Size Jersey --</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
+                                <option value="S" {{ old('size_jersey') == 'S' ? 'selected' : '' }}>S</option>
+                                <option value="M" {{ old('size_jersey') == 'M' ? 'selected' : '' }}>M</option>
+                                <option value="L" {{ old('size_jersey') == 'L' ? 'selected' : '' }}>L</option>
+                                <option value="XL" {{ old('size_jersey') == 'XL' ? 'selected' : '' }}>XL</option>
+                                <option value="XXL" {{ old('size_jersey') == 'XXL' ? 'selected' : '' }}>XXL</option>
                             </select>
+                            @error('size_jersey')
+                                <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
+
 
                         <!-- Bukti Bayar -->
                         <div class="col-span-1">
@@ -174,24 +224,34 @@
                                 class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:border-indigo-500 focus:ring-indigo-500">
                         </div>
 
-                        <!-- Checkbox untuk Syarat dan Ketentuan -->
+                        <!-- Checkbox untuk Kesehatan -->
                         <div class="col-span-1 md:col-span-2 flex items-center">
-                            <input type="checkbox" name="chek_sehat" id="chek_sehat" class="mr-2">
+                            <input type="checkbox" name="chek_sehat" id="chek_sehat" class="mr-2"
+                                {{ old('chek_sehat') ? 'checked' : '' }}>
                             <label for="chek_sehat" class="text-sm text-gray-700">
-                                Saya menyetujui dan secara langsung menyatakan sehat jasmani dan
-                                rohani.
+                                Saya menyetujui dan secara langsung menyatakan sehat jasmani dan rohani.
                             </label>
+                            @error('chek_sehat')
+                                <p class="text-sm text-red-600 mt-1 ml-2">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Checkbox untuk Syarat dan Ketentuan -->
                         <div class="col-span-1 md:col-span-2 flex items-center">
-                            <input type="checkbox" name="syarat_ketentuan" id="syarat_ketentuan" class="mr-2">
-                            <label for="syarat_ketentuan" class="text-sm text-gray-700">Saya menyetujui
+                            <input type="checkbox" name="syarat_ketentuan" id="syarat_ketentuan" class="mr-2"
+                                {{ old('syarat_ketentuan') ? 'checked' : '' }}>
+                            <label for="syarat_ketentuan" class="text-sm text-gray-700">
+                                Saya menyetujui
                                 <a href="{{ url('/Menu/syarat-ketentuan') }}" class="text-indigo-500 hover:underline"
-                                    target="blank">Syarat
-                                    dan Ketentuan</a>
+                                    target="_blank">
+                                    Syarat dan Ketentuan
+                                </a>
                             </label>
+                            @error('syarat_ketentuan')
+                                <p class="text-sm text-red-600 mt-1 ml-2">{{ $message }}</p>
+                            @enderror
                         </div>
+
 
 
                         {{-- <!-- Tombol Submit -->
