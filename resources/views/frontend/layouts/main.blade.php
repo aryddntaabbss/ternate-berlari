@@ -27,8 +27,6 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        @notifyCss
-
         <!-- Vendor CSS Files -->
         <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -64,6 +62,8 @@
 
         @include('frontend.layouts.footer')
 
+        <script src="https://cdn.tailwindcss.com"></script>
+
         <!-- Vendor JS Files -->
         <script src="{{ asset('backend/vendor/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -79,10 +79,6 @@
 
         <x-notify::notify />
         @notifyJs
-    </body>
-
-    <x-notify::notify />
-    @notifyJs
 
 
     </body>
