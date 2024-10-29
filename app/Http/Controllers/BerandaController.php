@@ -67,7 +67,7 @@ class BerandaController extends Controller
     {
      
             // Validasi data permintaan yang masuk
-            $request->validate([
+           $data =  $request->validate([
                 'nama_lengkap' => 'required|string|max:255',
                 'nik' => 'required|string|size:16|unique:peserta', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
                 'golongan_darah' => 'required|string|max:3',
@@ -77,8 +77,8 @@ class BerandaController extends Controller
                 'komunitas' => 'required|string|max:255',
                 'riwayat_penyakit' => 'required|string|max:255',
                 'kontak_darurat' => 'required|string|max:15', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-                'id_kategori' => 'required',
-                'id_road_race' => 'required',
+               'id_kategori' => 'required|exists:kategori,id',
+                'id_road_race' => 'required|exists:road_race,id',
                 'size_jersey' => 'required|string',
                 'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
             ]);

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_kategori')->nullable();
     
             // Menambahkan foreign key ke tabel road_race
-            $table->foreign('id_kategori')->references('id')->on('road_race')->onDelete('cascade');
+            $table->foreign('id_kategori')->references('id')->on('kategori')->onDelete('cascade');
         });
     }
     
