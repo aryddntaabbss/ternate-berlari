@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PesertaExport;
 use App\Models\Peserta;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PesertaController extends Controller
 {
@@ -47,5 +50,12 @@ class PesertaController extends Controller
         return response()->json(['success' => true, 'message' => '']);
     }
 
+    public function exportPeserta()
+    {
+        $timestamp = Carbon::now()->format('Y-m-d_H-i-s');
+        $fileName = 'peserta_data_' . $timestamp . '.xlsx';
+
+        return Excel::download(new PesertaExport, $fileName);
+    }
 
 }
