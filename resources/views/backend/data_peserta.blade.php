@@ -20,10 +20,10 @@
                             <!-- Judul di sebelah kiri -->
                             <h5 class="card-title">Data Peserta</h5>
 
-                            {{-- <!-- Tombol di sebelah kanan -->
-                            <a href="" class="btn btn-outline-success">
+                            <!-- Tombol di sebelah kanan -->
+                            <a href="{{ route('export.peserta') }}" class="btn btn-outline-success">
                                 <i class="bi bi-file-earmark-excel-fill"></i> Export Excel
-                            </a> --}}
+                            </a>
                         </div>
 
                         <!-- Table with stripped rows -->

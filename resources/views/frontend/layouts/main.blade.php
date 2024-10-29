@@ -25,7 +25,7 @@
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        @vite(['resources/css/app.css','resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @notifyCss
 
@@ -41,6 +41,7 @@
         <!-- Template Main CSS File -->
         <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
 
+        @notifyCss
         <style>
             .notify {
                 position: fixed;
@@ -63,8 +64,6 @@
 
         @include('frontend.layouts.footer')
 
-        <script src="https://cdn.tailwindcss.com"></script>
-
         <!-- Vendor JS Files -->
         <script src="{{ asset('backend/vendor/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -80,6 +79,12 @@
 
         <x-notify::notify />
         @notifyJs
+    </body>
+
+    <x-notify::notify />
+    @notifyJs
+
+
     </body>
 
 </html>

@@ -45,6 +45,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/data-peserta/{id}', [PesertaController::class, 'show'])->name('peserta.show');
     Route::delete('/data-peserta/{id}', [PesertaController::class, 'destroy'])->name('peserta.destroy');
     Route::post('/data-peserta/{id}/update-status', [PesertaController::class, 'updateStatus'])->name('peserta.updateStatus');
+    Route::get('/export-peserta', [PesertaController::class, 'exportPeserta'])->name('export.peserta');
     // menu
     Route::get('/menu', [MenuController::class, 'index'])->name('menu');
     Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
@@ -86,28 +87,28 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::resource('kategori', KategoriController::class);
 });
 
-Route::get('/migrate-fresh', function () {
-    Artisan::call('migrate:fresh --seed');
-    return response()->json([
-        'message' => 'Migration and seeding completed.'
-    ]);
-});
+// Route::get('/migrate-fresh', function () {
+//     Artisan::call('migrate:fresh --seed');
+//     return response()->json([
+//         'message' => 'Migration and seeding completed.'
+//     ]);
+// });
 
-Route::get('/storage-link', function () {
-    Artisan::call('storage:link');
-    return response()->json([
-        'message' => 'Storage link completed.'
-    ]);
-});
+// Route::get('/storage-link', function () {
+//     Artisan::call('storage:link');
+//     return response()->json([
+//         'message' => 'Storage link completed.'
+//     ]);
+// });
 
-Route::get('/clear-cache', function () {
-    Artisan::call('dump-autoload');
-    Artisan::call('config:cache');
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('route:clear');
-    Artisan::call('view:clear');
-    return response()->json([
-        'message' => 'Cache cleared and configurations reset.'
-    ]);
-});
+// Route::get('/clear-cache', function () {
+//     Artisan::call('dump-autoload');
+//     Artisan::call('config:cache');
+//     Artisan::call('config:clear');
+//     Artisan::call('cache:clear');
+//     Artisan::call('route:clear');
+//     Artisan::call('view:clear');
+//     return response()->json([
+//         'message' => 'Cache cleared and configurations reset.'
+//     ]);
+// });
