@@ -33,7 +33,7 @@
                                     <th>Nama Lengkap</th>
                                     <th>No Tlp</th>
                                     <th>Riwayat Penyakit</th>
-                                    <th>Kategori Usia</th>
+                                    <th>Kategori Road Race</th>
                                     <th>Size Jersey</th>
                                     <th>Bukti Bayar</th>
                                     <th>Status</th>
@@ -47,11 +47,12 @@
                                         <td>{{ $peserta->nama_lengkap }}</td>
                                         <td>{{ $peserta->no_tlp }}</td>
                                         <td>{{ $peserta->riwayat_penyakit }}</td>
-                                        @if ($peserta->kategori->id != 1)
+                                        <td>{{ $peserta->roadRace->nama }} Km</td>
+                                        {{-- @if ($peserta->kategori->id != 1)
                                             <td>{{ $peserta->kategori->name }}</td>
                                         @else
                                             <td>-</td>
-                                        @endif
+                                        @endif --}}
                                         <td>{{ $peserta->size_jersey }}</td>
                                         <td><a class="btn btn-secondary"
                                                 href="{{ asset('storage/' . $peserta->bukti_bayar) }}" target="_blank">Lihat
