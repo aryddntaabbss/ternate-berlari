@@ -87,28 +87,3 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::resource('kategori', KategoriController::class);
 });
 
-// Route::get('/migrate-fresh', function () {
-//     Artisan::call('migrate:fresh --seed');
-//     return response()->json([
-//         'message' => 'Migration and seeding completed.'
-//     ]);
-// });
-
-// Route::get('/storage-link', function () {
-//     Artisan::call('storage:link');
-//     return response()->json([
-//         'message' => 'Storage link completed.'
-//     ]);
-// });
-
-// Route::get('/clear-cache', function () {
-//     Artisan::call('dump-autoload');
-//     Artisan::call('config:cache');
-//     Artisan::call('config:clear');
-//     Artisan::call('cache:clear');
-//     Artisan::call('route:clear');
-//     Artisan::call('view:clear');
-//     return response()->json([
-//         'message' => 'Cache cleared and configurations reset.'
-//     ]);
-// });

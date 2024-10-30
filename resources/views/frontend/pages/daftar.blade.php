@@ -171,16 +171,14 @@
                         </div>
 
                         <input type="hidden" name="id_road_race" id="" value="{{ $road_race->id }}">
-                        @if ($road_race->nama == 5)
-                            <input type="hidden" name="id_kategori" id="" value="1">
-                        @else
+                        @if ($road_race->nama == 10)
                             <!-- Kategori Usia -->
                             <div class="col-span-1">
                                 <label for="kategori_usia" class="block text-sm font-medium text-gray-700">Kategori
                                     Usia</label>
                                 <select name="id_kategori" id="kategori_usia" required
                                     class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500
-                                    @error('id_kategori') border-red-500 @enderror">
+                                @error('id_kategori') border-red-500 @enderror">
                                     <option value="">-- Pilih Kategori Usia --</option>
                                     @foreach ($kategori as $ku)
                                         @if ($ku->id != 1)
@@ -195,6 +193,8 @@
                                     <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
+                        @else
+                            <input type="hidden" name="id_kategori" id="" value="1">
                         @endif
 
                         <!-- Size Jersey -->
