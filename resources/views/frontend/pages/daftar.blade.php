@@ -202,13 +202,15 @@
                             <label for="size_jersey" class="block text-sm font-medium text-gray-700">Size Jersey</label>
                             <select name="size_jersey" id="size_jersey" required
                                 class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500
-        @error('size_jersey') border-red-500 @enderror">
+                                @error('size_jersey') border-red-500 @enderror">
                                 <option value="">-- Pilih Size Jersey --</option>
                                 <option value="S" {{ old('size_jersey') == 'S' ? 'selected' : '' }}>S</option>
                                 <option value="M" {{ old('size_jersey') == 'M' ? 'selected' : '' }}>M</option>
                                 <option value="L" {{ old('size_jersey') == 'L' ? 'selected' : '' }}>L</option>
                                 <option value="XL" {{ old('size_jersey') == 'XL' ? 'selected' : '' }}>XL</option>
                                 <option value="XXL" {{ old('size_jersey') == 'XXL' ? 'selected' : '' }}>XXL</option>
+                                <option value="3XL" {{ old('size_jersey') == '3XL' ? 'selected' : '' }}>3XL</option>
+                                <option value="4XL" {{ old('size_jersey') == '4XL' ? 'selected' : '' }}>4XL</option>
                             </select>
                             @error('size_jersey')
                                 <p class="text-sm text-red-600 mt-1">{{ $message }}</p>

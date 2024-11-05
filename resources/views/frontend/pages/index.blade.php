@@ -150,6 +150,18 @@
                             <td class="border py-2 px-4">74</td>
                             <td class="border py-2 px-4">24</td>
                         </tr>
+                        <tr>
+                            <td class="border py-2 px-4">3XL</td>
+                            <td class="border py-2 px-4">56</td>
+                            <td class="border py-2 px-4">76</td>
+                            <td class="border py-2 px-4">25</td>
+                        </tr>
+                        <tr>
+                            <td class="border py-2 px-4">4XL</td>
+                            <td class="border py-2 px-4">58</td>
+                            <td class="border py-2 px-4">78</td>
+                            <td class="border py-2 px-4">26</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -196,10 +208,23 @@
                             <td class="border py-2 px-4">70</td>
                             <td class="border py-2 px-4">22</td>
                         </tr>
+                        <tr>
+                            <td class="border py-2 px-4">3XL</td>
+                            <td class="border py-2 px-4">52</td>
+                            <td class="border py-2 px-4">72</td>
+                            <td class="border py-2 px-4">23</td>
+                        </tr>
+                        <tr>
+                            <td class="border py-2 px-4">4XL</td>
+                            <td class="border py-2 px-4">54</td>
+                            <td class="border py-2 px-4">74</td>
+                            <td class="border py-2 px-4">24</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
     </section>
 
     <!-- Scroll to Top Button -->
