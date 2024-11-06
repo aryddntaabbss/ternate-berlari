@@ -51,38 +51,7 @@ class DatabaseSeeder extends Seeder
             'biaya' => '350.000',
         ]);
 
-        Peserta::create([
-            'nama_lengkap' => 'Ahmad Syahroni',
-            'nik' => '1234567890123456',
-            'golongan_darah' => 'A',
-            'pekerjaan' => 'Karyawan Swasta',
-            'no_tlp' => '081234567890',
-            'alamat' => 'Jl. Merdeka No. 10, Jakarta',
-            'komunitas' => 'Komunitas A',
-            'riwayat_penyakit' => 'Tidak ada',
-            'kontak_darurat' => '081234567891',
-            'size_jersey' => 'L',
-            'bukti_bayar' => 'assets/img/Logo.png',
-            'id_road_race' => 1,
-            'id_kategori' => 1,
-        ]);
-
-        Peserta::create([
-            'nama_lengkap' => 'Dewi Sartika',
-            'nik' => '2345678901234567',
-            'golongan_darah' => 'O',
-            'pekerjaan' => 'Guru',
-            'no_tlp' => '082234567891',
-            'alamat' => 'Jl. Jenderal Sudirman No. 20, Bandung',
-            'komunitas' => 'Komunitas B',
-            'riwayat_penyakit' => 'Asma',
-            'kontak_darurat' => '081234567892',
-            'size_jersey' => 'M',
-            'bukti_bayar' => 'assets/img/Logo.png',
-            'id_road_race' => 2,
-            'id_kategori' => 2,
-
-        ]);
+        
 
         DB::table('deskripsi_website')->insert([
             'url' => 'https://ternate-berlari.com/',
@@ -185,6 +154,39 @@ class DatabaseSeeder extends Seeder
             'slug' => 'syarat-ketentuan',
             'menu_id' => 1, // Sesuaikan ID menu (2 = About)
             'status' => 'aktif',
+        ]);
+
+        Peserta::create([
+            'nama_lengkap' => 'Ahmad Syahroni',
+            'nik' => '1234567890123456',
+            'golongan_darah' => 'A',
+            'pekerjaan' => 'Karyawan Swasta',
+            'no_tlp' => '081234567890',
+            'alamat' => 'Jl. Merdeka No. 10, Jakarta',
+            'komunitas' => 'Komunitas A',
+            'riwayat_penyakit' => 'Tidak ada',
+            'kontak_darurat' => '081234567891',
+            'size_jersey' => 'L',
+            'bukti_bayar' => 'assets/img/Logo.png',
+            'id_road_race' => 1,
+            'id_kategori' => 1,
+        ]);
+
+        Peserta::create([
+            'nama_lengkap' => 'Dewi Sartika',
+            'nik' => '2345678901234567',
+            'golongan_darah' => 'O',
+            'pekerjaan' => 'Guru',
+            'no_tlp' => '082234567891',
+            'alamat' => 'Jl. Jenderal Sudirman No. 20, Bandung',
+            'komunitas' => 'Komunitas B',
+            'riwayat_penyakit' => 'Asma',
+            'kontak_darurat' => '081234567892',
+            'size_jersey' => 'M',
+            'bukti_bayar' => 'assets/img/Logo.png',
+            'id_road_race' => 2,
+            'id_kategori' => 2,
+
         ]);
     }
 }
