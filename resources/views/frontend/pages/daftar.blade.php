@@ -220,10 +220,28 @@
 
                         <!-- Bukti Bayar -->
                         <div class="col-span-1">
-                            <label for="bukti_bayar" class="block text-sm font-medium pb-1 text-gray-700">Bukti Bayar
-                                (Upload Gambar)</label>
+                            <label for="bukti_bayar" class="block text-sm font-medium pb-1 text-gray-700">
+                                Bukti Bayar (Upload Gambar)
+                                <span class="ml-1 text-blue-500 cursor-pointer relative group">
+                                    <!-- Icon for info -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline h-4 w-4" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                            d="M18 10c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8zm-8-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1 4H9v7h2V8z" />
+                                    </svg>
+                                    <!-- Tooltip message -->
+                                    <div
+                                        class="absolute hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1 mt-1 w-48">
+                                        File gambar harus dalam format PNG, JPG, atau JPEG, dengan ukuran maksimal 2 MB.
+                                    </div>
+                                </span>
+                            </label>
                             <input type="file" name="bukti_bayar" id="bukti_bayar" accept="image/*" required
                                 class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:border-indigo-500 focus:ring-indigo-500">
+
+                            @error('bukti_bayar')
+                                <p class="text-sm text-red-600 mt-1 ml-2">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <!-- Checkbox untuk Kesehatan -->

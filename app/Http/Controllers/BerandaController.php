@@ -81,6 +81,8 @@ class BerandaController extends Controller
                 'id_road_race' => 'required|exists:road_race,id',
                 'size_jersey' => 'required|string',
                 'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
+            ], [
+                'bukti_bayar.max' => 'Ukuran Gambar tidak boleh lebih dari 2 MB',
             ]);
 
             // Menangani unggahan file
