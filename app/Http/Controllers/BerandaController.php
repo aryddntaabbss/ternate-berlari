@@ -44,7 +44,7 @@ class BerandaController extends Controller
     public function peserta()
     {
         // Ambil data peserta dari database
-        $data_peserta = Peserta::all();
+        $data_peserta = Peserta::latest()->get();
 
         // Return ke view 'frontend.pages.data-peserta' dengan data peserta
         return view('frontend.pages.data-peserta', compact('data_peserta'));
