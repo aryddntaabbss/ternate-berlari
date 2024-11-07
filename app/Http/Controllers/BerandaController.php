@@ -70,7 +70,8 @@ class BerandaController extends Controller
            $data =  $request->validate([
                 'nama_lengkap' => 'required|string|max:255',
                 'nik' => 'required|string|size:16|unique:peserta', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
-                'golongan_darah' => 'required|string|max:3',
+                // 'golongan_darah' => 'required|string|max:3',
+                'golongan_darah' => 'required|string|in:A,B,AB,O',
                 'pekerjaan' => 'required|string|max:255',
                 'no_tlp' => 'required|string|max:15|min:11', // Sesuaikan panjang maksimal sesuai kebutuhan Anda
                 'alamat' => 'required|string|max:255',
