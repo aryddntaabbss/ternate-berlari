@@ -64,7 +64,7 @@ class PesertaExport implements FromCollection, WithHeadings, WithMapping
     {
         return [
             $peserta->nama_lengkap,
-            $peserta->nik,
+            "'" . (string)$peserta->nik,
             $peserta->golongan_darah,
             $peserta->pekerjaan,
             $peserta->no_tlp,
@@ -76,7 +76,7 @@ class PesertaExport implements FromCollection, WithHeadings, WithMapping
             $peserta->bukti_bayar,
             $peserta->status,
             
-            $peserta->roadRace->nama,
+            $peserta->roadRace->nama.'K',
             $peserta->kategori->name === 'Tidak Ada' ? '-' : $peserta->kategori->name,
             $peserta->created_at->timezone('Asia/Jayapura')->format('Y-m-d H:i:s'),
         ];
