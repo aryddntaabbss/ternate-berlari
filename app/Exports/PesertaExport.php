@@ -71,7 +71,7 @@ class PesertaExport implements FromCollection, WithHeadings, WithMapping
             $peserta->alamat,
             $peserta->komunitas,
             $peserta->riwayat_penyakit,
-            $peserta->kontak_darurat,
+            "'" . (string)$peserta->kontak_darurat,
             $peserta->size_jersey,
             $peserta->bukti_bayar,
             $peserta->status,
