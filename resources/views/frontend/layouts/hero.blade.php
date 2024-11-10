@@ -62,7 +62,8 @@
 <!-- Script Hitung Mundur -->
 <script>
     // Mendefinisikan waktu target acara dari Blade
-    var eventDate = new Date("{{ $settings['tanggal_event'] }}").getTime();
+    // var eventDate = new Date("{{ $settings['tanggal_event'] }}").getTime();
+    var eventDate = new Date('12/08/2024');
 
     // Fungsi untuk update hitungan mundur setiap detik
     var countdownTimer = setInterval(function() {
