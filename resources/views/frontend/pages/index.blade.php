@@ -115,57 +115,58 @@
             <div class="flex justify-center items-center mb-6">
                 <img src="{{ asset('assets/img/man.png') }}" alt="Men's Shirt" class="w-full max-w-xs rounded-lg">
             </div>
-            <div>
-                <table class="w-full border-collapse border border-gray-300 text-center">
+            <div class="overflow-x-auto">
+                <table class="w-full max-w-sm mx-auto border-collapse border border-gray-300 text-center">
                     <thead>
                         <tr>
-                            <th class="border py-2 px-4 bg-gray-200">Ukuran</th>
-                            <th class="border py-2 px-4 bg-gray-200">Lebar Dada (cm)</th>
-                            <th class="border py-2 px-4 bg-gray-200">Panjang Jersey (cm)</th>
-                            <th class="border py-2 px-4 bg-gray-200">Panjang Lengan (cm)</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Ukuran</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Lebar Dada (cm)</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Panjang Jersey (cm)</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Panjang Lengan (cm)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="border py-2 px-4">S</td>
-                            <td class="border py-2 px-4">48</td>
-                            <td class="border py-2 px-4">68</td>
-                            <td class="border py-2 px-4">21</td>
+                            <td class="border py-1 px-2 text-sm">S</td>
+                            <td class="border py-1 px-2 text-sm">48</td>
+                            <td class="border py-1 px-2 text-sm">68</td>
+                            <td class="border py-1 px-2 text-sm">21</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">M</td>
-                            <td class="border py-2 px-4">50</td>
-                            <td class="border py-2 px-4">70</td>
-                            <td class="border py-2 px-4">22</td>
+                            <td class="border py-1 px-2 text-sm">M</td>
+                            <td class="border py-1 px-2 text-sm">50</td>
+                            <td class="border py-1 px-2 text-sm">70</td>
+                            <td class="border py-1 px-2 text-sm">22</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">L</td>
-                            <td class="border py-2 px-4">52</td>
-                            <td class="border py-2 px-4">72</td>
-                            <td class="border py-2 px-4">23</td>
+                            <td class="border py-1 px-2 text-sm">L</td>
+                            <td class="border py-1 px-2 text-sm">52</td>
+                            <td class="border py-1 px-2 text-sm">72</td>
+                            <td class="border py-1 px-2 text-sm">23</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">XL</td>
-                            <td class="border py-2 px-4">54</td>
-                            <td class="border py-2 px-4">74</td>
-                            <td class="border py-2 px-4">24</td>
+                            <td class="border py-1 px-2 text-sm">XL</td>
+                            <td class="border py-1 px-2 text-sm">54</td>
+                            <td class="border py-1 px-2 text-sm">74</td>
+                            <td class="border py-1 px-2 text-sm">24</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">3XL</td>
-                            <td class="border py-2 px-4">56</td>
-                            <td class="border py-2 px-4">76</td>
-                            <td class="border py-2 px-4">25</td>
+                            <td class="border py-1 px-2 text-sm">3XL</td>
+                            <td class="border py-1 px-2 text-sm">56</td>
+                            <td class="border py-1 px-2 text-sm">76</td>
+                            <td class="border py-1 px-2 text-sm">25</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">4XL</td>
-                            <td class="border py-2 px-4">58</td>
-                            <td class="border py-2 px-4">78</td>
-                            <td class="border py-2 px-4">26</td>
+                            <td class="border py-1 px-2 text-sm">4XL</td>
+                            <td class="border py-1 px-2 text-sm">58</td>
+                            <td class="border py-1 px-2 text-sm">78</td>
+                            <td class="border py-1 px-2 text-sm">26</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
 
         <!-- Column 2: Wanita -->
         <div data-aos="fade-left">
@@ -173,52 +174,52 @@
             <div class="flex justify-center items-center mb-6">
                 <img src="{{ asset('assets/img/woman.png') }}" alt="Women's Shirt" class="w-full max-w-xs rounded-lg">
             </div>
-            <div>
-                <table class="w-full border-collapse border border-gray-300 text-center">
+            <div class="overflow-x-auto">
+                <table class="w-full max-w-sm mx-auto border-collapse border border-gray-300 text-center">
                     <thead>
                         <tr>
-                            <th class="border py-2 px-4 bg-gray-200">Ukuran</th>
-                            <th class="border py-2 px-4 bg-gray-200">Lebar Dada (cm)</th>
-                            <th class="border py-2 px-4 bg-gray-200">Panjang Jersey (cm)</th>
-                            <th class="border py-2 px-4 bg-gray-200">Panjang Lengan (cm)</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Ukuran</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Lebar Dada (cm)</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Panjang Jersey (cm)</th>
+                            <th class="border py-1 px-2 bg-gray-200 text-sm">Panjang Lengan (cm)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="border py-2 px-4">S</td>
-                            <td class="border py-2 px-4">44</td>
-                            <td class="border py-2 px-4">64</td>
-                            <td class="border py-2 px-4">19</td>
+                            <td class="border py-1 px-2 text-sm">S</td>
+                            <td class="border py-1 px-2 text-sm">44</td>
+                            <td class="border py-1 px-2 text-sm">64</td>
+                            <td class="border py-1 px-2 text-sm">19</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">M</td>
-                            <td class="border py-2 px-4">46</td>
-                            <td class="border py-2 px-4">66</td>
-                            <td class="border py-2 px-4">20</td>
+                            <td class="border py-1 px-2 text-sm">M</td>
+                            <td class="border py-1 px-2 text-sm">46</td>
+                            <td class="border py-1 px-2 text-sm">66</td>
+                            <td class="border py-1 px-2 text-sm">20</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">L</td>
-                            <td class="border py-2 px-4">48</td>
-                            <td class="border py-2 px-4">68</td>
-                            <td class="border py-2 px-4">21</td>
+                            <td class="border py-1 px-2 text-sm">L</td>
+                            <td class="border py-1 px-2 text-sm">48</td>
+                            <td class="border py-1 px-2 text-sm">68</td>
+                            <td class="border py-1 px-2 text-sm">21</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">XL</td>
-                            <td class="border py-2 px-4">50</td>
-                            <td class="border py-2 px-4">70</td>
-                            <td class="border py-2 px-4">22</td>
+                            <td class="border py-1 px-2 text-sm">XL</td>
+                            <td class="border py-1 px-2 text-sm">50</td>
+                            <td class="border py-1 px-2 text-sm">70</td>
+                            <td class="border py-1 px-2 text-sm">22</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">3XL</td>
-                            <td class="border py-2 px-4">52</td>
-                            <td class="border py-2 px-4">72</td>
-                            <td class="border py-2 px-4">23</td>
+                            <td class="border py-1 px-2 text-sm">3XL</td>
+                            <td class="border py-1 px-2 text-sm">52</td>
+                            <td class="border py-1 px-2 text-sm">72</td>
+                            <td class="border py-1 px-2 text-sm">23</td>
                         </tr>
                         <tr>
-                            <td class="border py-2 px-4">4XL</td>
-                            <td class="border py-2 px-4">54</td>
-                            <td class="border py-2 px-4">74</td>
-                            <td class="border py-2 px-4">24</td>
+                            <td class="border py-1 px-2 text-sm">4XL</td>
+                            <td class="border py-1 px-2 text-sm">54</td>
+                            <td class="border py-1 px-2 text-sm">74</td>
+                            <td class="border py-1 px-2 text-sm">24</td>
                         </tr>
                     </tbody>
                 </table>
