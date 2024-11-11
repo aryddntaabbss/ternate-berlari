@@ -160,10 +160,10 @@
                                 class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
         @error('golongan_darah') border-red-500 @enderror">
                                 <option value="">-- Pilih Golongan Darah --</option>
-                                <option value="a" {{ old('golongan_darah') == 'a' ? 'selected' : '' }}>A</option>
-                                <option value="b" {{ old('golongan_darah') == 'b' ? 'selected' : '' }}>B</option>
-                                <option value="ab" {{ old('golongan_darah') == 'ab' ? 'selected' : '' }}>AB</option>
-                                <option value="o" {{ old('golongan_darah') == 'o' ? 'selected' : '' }}>O</option>
+                                <option value="A" {{ old('golongan_darah') == 'A' ? 'selected' : '' }}>A</option>
+                                <option value="B" {{ old('golongan_darah') == 'B' ? 'selected' : '' }}>B</option>
+                                <option value="AB" {{ old('golongan_darah') == 'AB' ? 'selected' : '' }}>AB</option>
+                                <option value="O" {{ old('golongan_darah') == 'O' ? 'selected' : '' }}>O</option>
                             </select>
                             @error('golongan_darah')
                                 <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
